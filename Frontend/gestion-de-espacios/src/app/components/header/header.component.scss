@@ -1,0 +1,157 @@
+@use 'var.scss';
+
+@font-face {
+  font-family: 'Gelion';
+  src: url('../../../assets/fonts/Gelion/Gelion-Regular.ttf');
+}
+
+.layout__StyledContent {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+}
+
+.nav__StyleHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.supportContainer__StyledSupportContainer {
+  background-color: #dadd02;
+  display: flex;
+  // border: 1px solid #dadd02;
+  justify-content: space-between;
+  width: 100%;
+  height: 38px;
+}
+
+.support__StyledLeftSupport {
+
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+
+}
+
+.support__StyledRightSupport {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.email__StyledMail {
+  font-size: var.$fz-xs;
+  font-weight: 600;
+  font-family: var.$font-sans;
+  text-decoration: none;
+
+
+  a {
+    color: black;
+  }
+}
+
+.phone__StyledPhone {
+  font-size: var.$fz-xs;
+  font-weight: 600;
+  font-family: var.$font-sans;
+  text-decoration: none;
+
+  a {
+    color: black;
+  }
+}
+
+.contact__StyledContactSupport {
+  display: flex;
+  justify-content: space-between;
+
+
+}
+
+.support__StyledSocialLinks {
+  display: flex;
+  max-width: 100%;
+}
+
+.item__StyledSocialItem {
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-bottom: 0px;
+
+  i {
+    color: black;
+    font-size: 16px;
+  }
+}
+
+.inner__StyledInnerNav {
+  background-color: var.$dark-blue;
+  // border: 3px solid rgb(215, 252, 7);
+
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 80px;
+
+}
+
+.container__StyledContainer {
+
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.menu__StyledMainMenu {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+}
+
+.menu__StyledBraventMenu {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.item__StyledMenuItem {
+  color: white;
+  font-size: var.$fz-xs;
+  font-family: var.$font-sans;
+  margin-left: 30px;
+
+}
+
+.main__StyledMainNav {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo__StyledLogo {
+  width: 85%;
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+  padding-left: 15px;
+
+}
+
+.img__StyledImage {
+  height: 50px;
+}

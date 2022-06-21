@@ -1,0 +1,86 @@
+@use 'var.scss';
+
+@font-face {
+  font-family: 'Gelion';
+  src: url('../../../assets/fonts/Gelion/Gelion-Regular.ttf');
+}
+
+
+
+.pages__StyledMainContainer {
+
+  background-image: url('../../../assets/images/4322025.jpg');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__StyledHeroSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 88vh;
+  padding-top: 100px;
+}
+
+span {
+  color: var.$green;
+  margin-left: 30px;
+}
+
+
+
+h1 {
+  color: var.$green;
+  font-size: var.$fz-md;
+  font-weight: 600;
+  font-family: var.$font-sans;
+}
+
+h3 {
+  margin: 0px 0px 40px 30px;
+  color: var.$white;
+  font-size: clamp(20px, 6vw, 90px);
+  font-weight: 600;
+  line-height: 1.2;
+
+}
+
+.red-letter {
+  color: var.$dark-blue;
+  font-size: clamp(70px, 6vw, 120px);
+}
+
+.hero__StyledTextHero {
+  // margin: 20px 20px 0px 20px;
+  // max-width: 540px;
+  color: var.$green;
+  font-family: var.$font-sans;
+  font-size: var.$fz-lg;
+
+}
+
+.resume-button {
+  display: flex;
+  color: var.$white;
+  border-radius: 25px;
+  padding: 0.75rem 3rem;
+  cursor: pointer;
+  font-size: var.$fz-md;
+  text-decoration: none;
+  font-family: var.$font-sans;
+  font-weight: 600;
+  margin: 0px 0px 0px 22px;
+  background-color: var.$green;
+  transition: all 0.2s ease-in-out;
+
+  &:hover,
+  &focus,
+  &:active {
+    outline: currentcolor none medium;
+    background-color: var.$white;
+    color: black;
+  }
+}
