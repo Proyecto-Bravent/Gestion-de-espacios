@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'Gelion';
-  src: url('../../../assets/fonts/Gelion/Gelion-Regular.ttf');
+  src: url('../../../assets/fonts/Gelion/Gelion-Medium.ttf');
 }
 
 .layout__StyledContent {
@@ -52,6 +52,7 @@
   font-weight: 600;
   font-family: var.$font-sans;
   text-decoration: none;
+  padding-right: 10px;
 
 
   a {
@@ -90,13 +91,15 @@
   i {
     color: black;
     font-size: 16px;
+
+    &:hover {
+      color: white;
+    }
   }
 }
 
 .inner__StyledInnerNav {
   background-color: var.$dark-blue;
-  // border: 3px solid rgb(215, 252, 7);
-
   display: flex;
   justify-content: space-evenly;
   width: 100%;
@@ -105,7 +108,6 @@
 }
 
 .container__StyledContainer {
-
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -116,22 +118,31 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-
 }
 
 .menu__StyledBraventMenu {
   display: flex;
   justify-content: center;
-  margin-top: 25px;
 }
 
-.item__StyledMenuItem {
-  color: white;
+.item__StyledMenuItem a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: var.$fz-xs;
   font-family: var.$font-sans;
-  margin-left: 30px;
+  width: 110px;
+  height: 80px;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.2px;
 
+  &:hover {
+    background-color: #dadd02;
+    color: black;
+  }
 }
+
 
 .main__StyledMainNav {
   display: flex;
@@ -144,11 +155,11 @@ a {
 }
 
 .logo__StyledLogo {
-  width: 85%;
+  width: 92%;
   display: flex;
   justify-content: center;
   padding-top: 15px;
-  padding-left: 15px;
+  padding-right: 30px;
 
 }
 

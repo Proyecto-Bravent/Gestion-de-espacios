@@ -89,17 +89,17 @@
               <div class="menu__StyledMainMenu">
                 <nav class="main__StyledMainNav">
                   <ul class="menu__StyledBraventMenu" role="list">
-                    <li >
-                    <a class="item__StyledMenuItem" href="#">ACERCA DE</a>
+                    <!-- <li class="item__StyledMenuItem">
+                    <a class="link__StyledMenuLink"  href="#">ACERCA DE</a>
+                    </li> -->
+                    <li class="item__StyledMenuItem" >
+                      <a class="link__StyledMenuLink" href="#">ESPACIOS</a>
                     </li>
-                    <li >
-                      <a class="item__StyledMenuItem" href="#">ESPACIOS</a>
+                    <li class="item__StyledMenuItem"  >
+                      <a class="link__StyledMenuLink" [routerLink]="['/register']">REGISTRO</a>
                     </li>
-                    <li >
-                      <a class="item__StyledMenuItem" [routerLink]="['/register']">NUEVO USUARIO</a>
-                    </li>
-                    <li >
-                      <a class="item__StyledMenuItem" [routerLink]="['/login']">INICIAR SESIÓN</a>
+                    <li class="item__StyledMenuItem" >
+                      <a class="link__StyledMenuLink" [routerLink]="['/login']">INICIAR SESIÓN</a>
                     </li>
                   </ul>
                 </nav>
