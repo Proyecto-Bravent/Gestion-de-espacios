@@ -1,18 +1,20 @@
 <div class="container">
   <div class="left">
     <div class="brand-img">
-      <img src="./../../../assets/logo/sasass@2x.png" alt="" class="img__Styledimage">
+      <a class="none-styled" [routerLink]="['/home']"><img src="./../../../assets/logo/sasass@2x.png" alt="" class="img__Styledimage"></a>
     </div>
     <div class="header">
-      <h2 class="animation a1">¡Bienvenido/a!</h2>
+      <h2 class="animation a1">¡Accede a tu cuenta!</h2>
       <h4 class="animation a2">Inicia sesión con tu correo electrónico y contraseña.</h4>
     </div>
-    <div class="form">
-      <input type="email" class="form-field animation a3" placeholder="E-mail*">
-      <input type="password" class="form-field animation a4" placeholder="Contraseña*">
-      <p class="animation a5"><a href="#">¿Necesitas recuperar tu contraseña?</a></p>
-      <a class="resume-button">ACEPTAR</a>
-    </div>
+    <form #login="ngForm" (ngSubmit)="getLoginData(login)">
+      <div class="form">
+        <input type="email" class="form-field animation a3" placeholder="E-mail*">
+        <input type="password" class="form-field animation a4" placeholder="Contraseña*">
+        <p class="animation a5"><a href="#">¿Necesitas recuperar tu contraseña?</a></p>
+        <input type="submit" class="resume-button" value="ACEPTAR">
+      </div>
+    </form>
   </div>
   <div class="right"></div>
 </div>

@@ -32,6 +32,11 @@ html:focus-within {
   scroll-behavior: smooth;
 }
 
+::selection {
+  background-color: rgb(185, 185, 185);
+  color: var.$dark-blue;
+}
+
 /* Set core body defaults */
 body {
   min-height: 90vh;
