@@ -79,7 +79,7 @@
               <!-- Logo -->
 
               <div class="logo__StyledLogo"  >
-                <a   href="https://www.bravent.net">
+                <a [routerLink]="['/home']">
                   <img class="img__StyledImage" src="./assets/logo/Recurso 5@2x.png" alt="">
                 </a>
               </div>
@@ -96,10 +96,10 @@
                       <a class="item__StyledMenuItem" href="#">ESPACIOS</a>
                     </li>
                     <li >
-                      <a class="item__StyledMenuItem" href="#">NUEVO USUARIO</a>
+                      <a class="item__StyledMenuItem" [routerLink]="['/register']">NUEVO USUARIO</a>
                     </li>
                     <li >
-                      <a class="item__StyledMenuItem" href="#">INICIAR SESIÓN</a>
+                      <a class="item__StyledMenuItem" [routerLink]="['/login']">INICIAR SESIÓN</a>
                     </li>
                   </ul>
                 </nav>
