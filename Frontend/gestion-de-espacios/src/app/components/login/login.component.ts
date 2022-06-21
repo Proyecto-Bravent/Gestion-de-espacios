@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
         alert(response.error)
       } else if (response.token !== "") {
         localStorage.setItem('user-token', response.token)
-        this.router.navigate(['/home'])
+        this.router.navigate(['/workspace'])
         pForm.resetForm()
       }
 

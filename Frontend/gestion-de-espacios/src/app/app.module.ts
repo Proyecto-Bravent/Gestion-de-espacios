@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { WorkspaceComponent } from './components/workspace/workspace.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { RegisterComponent } from './components/register/register.component';
     HomeComponent,
     HeaderComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    WorkspaceComponent
 
   ],
   imports: [
