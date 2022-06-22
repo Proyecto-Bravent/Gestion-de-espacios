@@ -10,6 +10,7 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class LoginComponent implements OnInit {
 
+
   constructor(private usersServices: UsersService, private router: Router) { }
 
   ngOnInit(): void {
@@ -27,11 +28,10 @@ export class LoginComponent implements OnInit {
       } else if (response.token !== "") {
         localStorage.setItem('user-token', response.token)
         this.router.navigate(['/workspace'])
-        pForm.resetForm()
       }
 
     } catch (error) {
-      alert(error)
+      console.log(error)
     }
   }
 

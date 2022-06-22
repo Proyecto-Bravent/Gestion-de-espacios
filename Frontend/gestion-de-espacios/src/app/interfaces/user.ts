@@ -4,6 +4,7 @@ export interface User {
   apellido: string,
   email: string,
   contraseña: string,
+  // repiteContraseña: string,
   compañia: string,
   departamento: string,
   token: string,
