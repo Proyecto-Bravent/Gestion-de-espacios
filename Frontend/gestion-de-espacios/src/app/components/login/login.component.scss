@@ -1,8 +1,14 @@
 @use 'var.scss';
 
+@font-face {
+  font-family: 'Gelion';
+  src: url('../../../assets/fonts/Gelion/Gelion-Regular.ttf');
+}
+
 .container {
   display: flex;
   height: 87.3vh;
+  font-family: 'Gelion';
 }
 
 .left {
@@ -39,7 +45,6 @@
 .header>h2 {
   text-align: center;
   color: var.$green;
-  font-family: var.$font-sans;
   font-weight: 600;
 }
 
@@ -49,13 +54,20 @@
   font-size: 15px;
   color: rgb(0, 0, 7);
   text-align: center;
-  font-family: var.$font-sans;
+}
+
+input {
+  background-color: transparent;
+
+  &:hover {
+    background-color: rgba(128, 128, 128, 0.075);
+  }
 }
 
 ::placeholder {
   color: rgba(5, 5, 5, 0.438);
   font-size: var.$fz-xxs;
-  font-family: var.$font-sans;
+  font-family: 'Gelion';
 }
 
 .form {
@@ -73,7 +85,7 @@
 .form>p>a {
   color: rgb(0, 0, 7);
   font-size: 14px;
-  font-family: var.$font-sans;
+  font-family: 'Gelion';
 
   &:hover {
     color: var.$green
