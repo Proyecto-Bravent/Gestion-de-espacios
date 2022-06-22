@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'workspace', component: WorkspaceComponent, canActivate: [LoginGuard] },
+  { path: 'workspace', component: WorkspaceComponent, },
   { path: "**", redirectTo: "/home" },
 ];
 
