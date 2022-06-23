@@ -7,12 +7,12 @@
       <h2 class="animation a1">¡Accede a tu cuenta!</h2>
       <h4 class="animation a2">Inicia sesión con tu correo electrónico y contraseña.</h4>
     </div>
-    <form #login="ngForm" (ngSubmit)="getLoginData(login)">
+    <form #loginForm="ngForm" (ngSubmit)="getLoginData(loginForm)">
       <div class="form">
         <input type="email" name="email" required="required" class="form-field animation a3" placeholder="E-mail*" ngModel>
         <input  type="password" name="password" required="required" class="form-field animation a4" placeholder="Contraseña*" ngModel>
         <p class="animation a5"><a href="#">¿Necesitas recuperar tu contraseña?</a></p>
-        <input (click)="getLoginData(login)" type="submit" class="resume-button" value="ACEPTAR">
+        <input type="submit" class="resume-button" value="ACEPTAR">
       </div>
     </form>
   </div>

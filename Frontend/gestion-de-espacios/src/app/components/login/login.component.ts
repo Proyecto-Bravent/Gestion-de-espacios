@@ -19,20 +19,15 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  async getLoginData(pForm: any) {
-    try {
-      const response: User | any = await this.usersServices.login(pForm.value)
-      console.log(response)
-      if (response.error) {
-        alert(response.error)
-      } else if (response.token !== "") {
-        localStorage.setItem('user-token', response.token)
-        this.router.navigate(['/workspace'])
+  getLoginData(pForm: any) {
+    this.usersServices.login(pForm.value).subscribe(res => {
+      if (res.error) {
+        alert(res.error)
+      } else {
+        localStorage.setItem('token', res.token)
+        this.router.navigate(['/home'])
       }
-
-    } catch (error) {
-      console.log(error)
-    }
+    })
   }
 
 }

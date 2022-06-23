@@ -6,17 +6,17 @@
     </div>
     <form [formGroup]="register"(ngSubmit)="getDataForm()" >
       <div class="form">   
-        <input type="text" class="form-field animation a3" placeholder="Nombre*" formControlName="nombre">     
-        <input type="text" class="form-field animation a3" placeholder="Apellidos*"formControlName="apellido">
-        <input type="email" class="form-field animation a3" placeholder="E-mail*" formControlName="email">
-        <input type="password" class="form-field animation a3" placeholder="Contraseña*"formControlName="contraseña">
-        <!-- <input type="password" class="form-field animation a3" placeholder="Confirma tu contraseña*"formControlName="repiteContraseña"> -->
+        <input type="text" class="form-field animation a3" placeholder="Nombre*" formControlName="name">     
+        <input type="text" class="form-field animation a3" placeholder="Apellidos*"formControlName="surname">
+        <input type="email" class="form-field animation a3" placeholder="E-mail*" formControlName="mail">
+        <input type="password" class="form-field animation a3" placeholder="Contraseña*"formControlName="password">
+        <input type="password" class="form-field animation a3" placeholder="Confirma tu contraseña*"formControlName="repeatPassword">
         <p>Selecciona tu compañía:</p>
         <div class="labels">
-          <label><input type="radio" class="form-field animation a4">Bravent</label>
-          <label><input type="radio" class="form-field animation a4" >Bitwork</label>
+          <label><input type="radio" name="bravent" class="form-field animation a4">Bravent</label>
+          <label><input type="radio" name="bitwork" class="form-field animation a4" >Bitwork</label>
         </div>
-          <input (click)="getDataForm()" type="submit" class="resume-button" value="ACEPTAR" >
+          <input type="submit" class="resume-button" value="ACEPTAR" >
       </div>
     </form>
   </div>
