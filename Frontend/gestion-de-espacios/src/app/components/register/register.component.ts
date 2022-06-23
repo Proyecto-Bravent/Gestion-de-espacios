@@ -19,12 +19,12 @@ export class RegisterComponent implements OnInit {
     private router: Router
   ) {
     this.register = new FormGroup({
-      name: new FormControl('', []),
-      surname: new FormControl('', []),
-      mail: new FormControl('', []),
-      password: new FormControl('', []),
-      repeatPassword: new FormControl('', []),
-      company: new FormControl('', []),
+      name: new FormControl('', [Validators.required]),
+      surname: new FormControl('', [Validators.required]),
+      mail: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
+      repeatPassword: new FormControl('', [Validators.required]),
+      company: new FormControl('', [Validators.required]),
     }, [])
   }
 

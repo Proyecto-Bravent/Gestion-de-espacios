@@ -6,8 +6,8 @@ export interface User {
   password: string,
   repeatPassword: string,
   img_avatar: string,
-  is_bravent: boolean,
+  role: number,
   company: string,
-  departament: string,
+  department: string,
   token: string,
 }

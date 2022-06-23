@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
         alert(res.error)
       } else {
         localStorage.setItem('token', res.token)
-        this.router.navigate(['/home'])
+        this.router.navigate(['/workspace'])
       }
     })
   }
