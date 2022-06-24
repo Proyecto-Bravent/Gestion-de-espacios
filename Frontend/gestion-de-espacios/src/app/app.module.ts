@@ -10,6 +10,12 @@ import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { WorkspaceComponent } from './components/workspace/workspace.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { EditProfileComponent } from './components/profile/edit-profile/edit-profile.component';
+import { PasswordComponent } from './components/profile/password/password.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
+import { EventsComponent } from './components/calendar/events/events.component';
+import { UiComponent } from './components/calendar/ui/ui.component';
 
 
 @NgModule({
@@ -19,7 +25,13 @@ import { WorkspaceComponent } from './components/workspace/workspace.component';
     HeaderComponent,
     LoginComponent,
     RegisterComponent,
-    WorkspaceComponent
+    WorkspaceComponent,
+    ProfileComponent,
+    EditProfileComponent,
+    PasswordComponent,
+    CalendarComponent,
+    EventsComponent,
+    UiComponent
 
   ],
   imports: [

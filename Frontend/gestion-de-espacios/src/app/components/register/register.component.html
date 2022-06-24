@@ -1,24 +1,26 @@
-<div class="container">
-  <div class="right">
-     <div class="header">
-      <h2 class="animation a1">¡Bienvenido/a!</h2>
-      <h4 class="animation a2">Completa los campos para formalizar el registro.</h4>
-    </div>
-    <form [formGroup]="register"(ngSubmit)="getDataForm()" >
-      <div class="form">   
-        <input type="text" class="form-field animation a3" placeholder="Nombre*" formControlName="name">     
-        <input type="text" class="form-field animation a3" placeholder="Apellidos*"formControlName="surname">
-        <input type="email" class="form-field animation a3" placeholder="E-mail*" formControlName="mail">
-        <input type="password" class="form-field animation a3" placeholder="Contraseña*"formControlName="password">
-        <input type="password" class="form-field animation a3" placeholder="Confirma tu contraseña*"formControlName="repeatPassword">
-        <p>Selecciona tu compañía/departamento:</p>
-        <div class="labels">
-          <label><input type="radio" name="bravent" class="form-field animation a4">Bravent</label>
-                    <label><input type="radio" name="marketing" class="form-field animation a4" >Bravent/Marketing</label>
-          <label><input type="radio" name="bitwork" class="form-field animation a4" >Bitwork</label>
-        </div>
-          <input type="submit" class="resume-button" value="ACEPTAR" >
+
+  <div class="container">
+    <div class="right">
+      <div class="header">
+        <h2 class="animation a1">¡Bienvenido/a!</h2>
+        <h4 class="animation a2">Completa los campos para formalizar el registro.</h4>
       </div>
-    </form>
+      <form [formGroup]="register" (ngSubmit)="getDataForm()">
+        <div class="form">
+          <input type="text" class="form-field animation a3" placeholder="Nombre y apellidos*"
+            formControlName="username">
+          <input type="email" class="form-field animation a3" placeholder="E-mail*" formControlName="mail">
+          <input type="password" class="form-field animation a3" placeholder="Contraseña*" formControlName="password">
+          <input type="password" class="form-field animation a3" placeholder="Confirma tu contraseña*"
+            formControlName="repeatPassword">
+          <p>Selecciona tu compañía/departamento:</p>
+          <div class="labels">
+            <label><input type="radio" name="bravent" class="form-field animation a4">Bravent</label>
+            <label><input type="radio" name="marketing" class="form-field animation a4">Bravent/Marketing</label>
+            <label><input type="radio" name="bitwork" class="form-field animation a4">Bitwork</label>
+          </div>
+          <input type="submit" class="resume-button" value="ACEPTAR">
+        </div>
+      </form>
+    </div>
   </div>
-</div>
