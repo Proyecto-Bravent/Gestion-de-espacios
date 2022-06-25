@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { provideAuth, getAuth } from '@angular/fire/auth';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,7 +20,13 @@ import { EventsComponent } from './components/calendar/events/events.component';
 import { UiComponent } from './components/calendar/ui/ui.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+
+// Directive
+
+import { AdminDirective } from './directives/admin.directive';
+
+
+
 
 
 @NgModule({
@@ -35,7 +42,9 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
     PasswordComponent,
     CalendarComponent,
     EventsComponent,
-    UiComponent
+    UiComponent,
+    AdminDirective
+
 
   ],
   imports: [
