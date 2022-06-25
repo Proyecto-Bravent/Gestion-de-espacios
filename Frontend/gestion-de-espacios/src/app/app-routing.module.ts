@@ -5,6 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
+import { SpaceComponent } from './components/workspace/space/space.component';
 import { WorkspaceComponent } from './components/workspace/workspace.component';
 import { LoginGuard } from './guards/login.guard';
 
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'workspace', component: WorkspaceComponent },
   { path: 'profile/:idprofile', component: ProfileComponent },
   { path: 'calendar', component: CalendarComponent },
+  { path: 'space', component: SpaceComponent },
   { path: "**", redirectTo: "/home" },
 
 ];

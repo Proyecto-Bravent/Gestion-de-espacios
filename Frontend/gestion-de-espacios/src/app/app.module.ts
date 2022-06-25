@@ -28,6 +28,7 @@ import { UiComponent } from './components/calendar/ui/ui.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { ReserveComponent } from './components/calendar/reserve/reserve.component';
+import { SpaceComponent } from './components/workspace/space/space.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { ReserveComponent } from './components/calendar/reserve/reserve.componen
     CalendarComponent,
     UiComponent,
     ReserveComponent,
-    AdminDirective
+    AdminDirective,
+    SpaceComponent,
   ],
   imports: [
     BrowserModule,

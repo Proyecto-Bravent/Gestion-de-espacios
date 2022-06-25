@@ -49,6 +49,16 @@ span {
   align-items: center;
 }
 
+.x2 {
+  border: 2px solid rgba(217, 221, 2, 0.603);
+  min-height: 320px;
+
+  &:hover {
+    box-shadow: rgba(245, 245, 220, 0.877) 0px 10px 30px -15px;
+
+  }
+}
+
 .data-card {
   background-color: rgba(3, 3, 0, 0.5);
   display: flex;
@@ -118,7 +128,7 @@ span {
   }
 
   &:hover {
-    background: #d9dd0269;
+    background: #d9dd0277;
     ;
     transform: scale(1.02);
 
