@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { lastValueFrom, Observable } from 'rxjs';
 
@@ -30,19 +30,31 @@ export class ReservesService {
   // Crea reserva
 
   createReserve(pForm: any): Observable<any> {
-    return this.httpClient.post<any>(this.baseUrl, pForm)
+    const res = this.httpClient.post<any>(this.baseUrl, pForm)
+    return res
   }
 
-  // Actualiza reserva
+  // Actualiza reserva solo los autorizados
 
-  updateReserve(pForm: any, pId: number): Promise<any> {
-    return lastValueFrom(this.httpClient.put<any>(`${this.baseUrl}${pId}`, pForm))
+  updateReserve(pForm: any, pId: number): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('token')!
+      })
+    }
+    const res = this.httpClient.put<any>(`${this.baseUrl}${pId}`, pForm, httpOptions)
+    return res
   }
 
-  // Borra reserva
+  // Borra reserva solo los autorizados
 
   deleteReserve(pId: number): Promise<any> {
-    return lastValueFrom(this.httpClient.delete<any>(`${this.baseUrl}${pId}`))
+    const httpOtions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('token')!
+      })
+    }
+    return lastValueFrom(this.httpClient.delete<any>(`${this.baseUrl}${pId}`, httpOtions))
   }
 
   // Coge reservas por usuario

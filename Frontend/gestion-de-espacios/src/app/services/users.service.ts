@@ -15,6 +15,8 @@ export class UsersService {
     this.baseUrl = 'http://localhost:3000/api/'
   }
 
+  // Loggin del usuario
+
   login(pForm: any): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -25,33 +27,13 @@ export class UsersService {
     return res
   }
 
+  // Register
+
   register(pForm: any): Promise<any> {
     return lastValueFrom(this.httpClient.post<any>(this.baseUrl + 'register', pForm))
   }
 
-  // Get users by Id & all users
-
-  getById(pId: number): Promise<any> {
-    return lastValueFrom(this.httpClient.get<any>(this.baseUrl + "profile/" + pId))
-  }
-
-  getAll(): Promise<any[]> {
-    return lastValueFrom(this.httpClient.get<any[]>(this.baseUrl + '/profiles'))
-  }
-
-  // Reset Password
-
-  resetPassword(pForm: any, pId: number): Observable<any> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Authorization': localStorage.getItem('token')!
-      })
-    }
-    const res = this.httpClient.put<any>(this.baseUrl + 'resetPassword/' + pId, pForm, httpOptions)
-    return res
-  }
-
-  // myUser
+  // Mi usuario
 
   myUser() {
     const httpOptions = {
@@ -63,7 +45,31 @@ export class UsersService {
     return lastValueFrom(this.httpClient.get<any>(this.baseUrl + 'myprofile', httpOptions))
   }
 
-  // edit user
+  // Traigo usuarios por Id
+
+  getById(pId: number): Promise<any> {
+    return lastValueFrom(this.httpClient.get<any>(this.baseUrl + "profile/" + pId))
+  }
+
+  // Traigo todos los usuarios
+
+  getAll(): Promise<any[]> {
+    return lastValueFrom(this.httpClient.get<any[]>(this.baseUrl + '/profiles'))
+  }
+
+  // Resetear contraseña
+
+  resetPassword(pForm: any, pId: number): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('token')!
+      })
+    }
+    const res = this.httpClient.put<any>(this.baseUrl + 'resetPassword/' + pId, pForm, httpOptions)
+    return res
+  }
+
+  // Editar usuario solo los autorizados
 
   editUser(pForm: any, pId: number): Observable<any> {
     const httpOptions = {
@@ -75,7 +81,7 @@ export class UsersService {
     return res
   }
 
-  // delete user
+  // Borrar usuario solo los autorizados
 
   deleteUser(pId: number): Observable<any> {
     const httpOptions = {
