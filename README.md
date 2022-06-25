@@ -1,7 +1,3 @@
-Angular 13 / SCSS
-
-Hi my name is Jorge. This project are a demonstrate using Angular 13 creating a simple app.
-
 ## Get started
 
 ### Clone the repo
