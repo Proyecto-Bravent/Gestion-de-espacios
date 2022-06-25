@@ -28,6 +28,27 @@
   width: 380px;
 }
 
+.google__StyledIconGoogle {
+  display: flex;
+  justify-content: center;
+}
+
+.linked__StyledLoginButton {
+
+  text-align: center;
+  margin-top: 30px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+
+
+}
+
+.fa-google {
+  color: var.$green;
+  font-size: 50px;
+}
+
 .img__Styledimage {
   max-width: 100%;
 }
