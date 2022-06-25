@@ -11,9 +11,11 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class LoginComponent implements OnInit {
 
+  // Password validators are --> ^ - Start of string, (?=[A-Z0-9]*[a-z]) look ahead to ensure at least one lower case alphabet, (?=[a-zA-Z]*[0-9]) look ahead to ensure at least one digit , (?=[a-z0-9]*[A-Z]) look ahead to ensure at least one upper case alphabet, [a-zA-Z0-9]{8,} captures eight or more alphanumeric characters, $ end of string
+
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(20), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')],),
+    password: new FormControl('', [Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')],),
   })
 
 
