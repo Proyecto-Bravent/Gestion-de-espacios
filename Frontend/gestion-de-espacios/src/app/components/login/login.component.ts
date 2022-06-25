@@ -1,25 +1,25 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { UsersService } from 'src/app/services/users.service';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+
 export class LoginComponent implements OnInit {
 
-  // Password validators are --> ^ - Start of string, (?=[A-Z0-9]*[a-z]) look ahead to ensure at least one lower case alphabet, (?=[a-zA-Z]*[0-9]) look ahead to ensure at least one digit , (?=[a-z0-9]*[A-Z]) look ahead to ensure at least one upper case alphabet, [a-zA-Z0-9]{8,} captures eight or more alphanumeric characters, $ end of string
+  // Password validators are --> ^ - Comienzo del string, (?=[A-Z0-9]*[a-z]) miramos para asegurar al menos un carácter en minúsculas, (?=[a-zA-Z]*[0-9]) nos aseguramos al menos un número , (?=[a-z0-9]*[A-Z]) pedimos al menos una mayúscula, [a-zA-Z0-9]{8,} pedimos ocho o más caracteres, $ fin del string.
 
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')],),
+    password: new FormControl('', [Validators.required, Validators.pattern('^(?=[A-Z0-9]*[a-z])(?=[a-zA-Z]*[0-9])(?=[a-z0-9]*[A-Z])[a-zA-Z0-9]{8,}$')],),
   })
 
-
-  constructor(private usersServices: UsersService, private authServices: AuthService, private router: Router) { }
+  constructor(private usersServices: UsersService, private authServices: AuthService,
+    private router: Router) { }
 
   async googleOnLogin() {
     try {
@@ -45,18 +45,5 @@ export class LoginComponent implements OnInit {
       }
     })
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 

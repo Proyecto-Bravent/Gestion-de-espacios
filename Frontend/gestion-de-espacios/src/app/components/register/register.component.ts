@@ -12,6 +12,8 @@ import { UsersService } from 'src/app/services/users.service';
 
 export class RegisterComponent implements OnInit {
 
+  // Nuestro formulario de registro.
+
   register: FormGroup
 
   constructor(
@@ -20,12 +22,12 @@ export class RegisterComponent implements OnInit {
   ) {
     this.register = new FormGroup({
 
-      // Password validators are --> ^ - Start of string, (?=[A-Z0-9]*[a-z]) look ahead to ensure at least one lower case alphabet, (?=[a-zA-Z]*[0-9]) look ahead to ensure at least one digit , (?=[a-z0-9]*[A-Z]) look ahead to ensure at least one upper case alphabet, [a-zA-Z0-9]{8,} captures eight or more alphanumeric characters, $ end of string
+      // Password validators are --> ^ - Comienzo del string, (?=[A-Z0-9]*[a-z]) miramos para asegurar al menos un carácter en minúsculas, (?=[a-zA-Z]*[0-9]) nos aseguramos al menos un número , (?=[a-z0-9]*[A-Z]) pedimos al menos una mayúscula, [a-zA-Z0-9]{8,} pedimos ocho o más caracteres, $ fin del string.
 
       username: new FormControl('', [Validators.required]),
       mail: new FormControl('', [Validators.required]),
-      password: new FormControl('', [Validators.required, Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')]),
-      repeatPassword: new FormControl('', [Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')]),
+      password: new FormControl('', [Validators.required, Validators.required, Validators.pattern('^(?=[A-Z0-9]*[a-z])(?=[a-zA-Z]*[0-9])(?=[a-z0-9]*[A-Z])[a-zA-Z0-9]{8,}$')]),
+      repeatPassword: new FormControl('', [Validators.required, Validators.pattern('^(?=[A-Z0-9]*[a-z])(?=[a-zA-Z]*[0-9])(?=[a-z0-9]*[A-Z])[a-zA-Z0-9]{8,}$')]),
       company: new FormControl('', [Validators.required]),
     }, [])
   }
@@ -35,14 +37,12 @@ export class RegisterComponent implements OnInit {
 
   async getDataForm() {
     try {
-      const response = await this.usersService.register(this.register.value)
-      alert(response.success)
+      // Guardamos la respuesta que nos da la función register de nuestro servicio y su valor y gestionamos el error si lo hay y lo mostramos en pantalla. 
+      const res = await this.usersService.register(this.register.value)
+      alert(res.success)
       this.router.navigate(['/login'])
     } catch (err) {
       console.log(err)
     }
-
   }
-
-
 }

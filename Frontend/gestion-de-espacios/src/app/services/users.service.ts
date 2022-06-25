@@ -1,17 +1,18 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { lastValueFrom, Observable } from 'rxjs';
-import { User } from '../interfaces/user'
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class UsersService {
 
   baseUrl: string
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = 'http://localhost:3000/api/users/'
+
+    this.baseUrl = 'http://localhost:3000/api/'
   }
 
   login(pForm: any): Observable<any> {
@@ -20,26 +21,22 @@ export class UsersService {
         'Content-Type': 'application/json'
       })
     }
-    return this.httpClient.post<any>(this.baseUrl + 'login', pForm, httpOptions)
+    const res = this.httpClient.post<any>(this.baseUrl + 'login', pForm, httpOptions)
+    return res
   }
 
   register(pForm: any): Promise<any> {
     return lastValueFrom(this.httpClient.post<any>(this.baseUrl + 'register', pForm))
   }
 
-
-  // Get users
-
-  // Id
+  // Get users by Id & all users
 
   getById(pId: number): Promise<any> {
-    return lastValueFrom(this.httpClient.get<any>(this.baseUrl + "profile/" + pId));
+    return lastValueFrom(this.httpClient.get<any>(this.baseUrl + "profile/" + pId))
   }
 
-  // All
-
   getAll(): Promise<any[]> {
-    return lastValueFrom(this.httpClient.get<any[]>(this.baseUrl + '/profiles'));
+    return lastValueFrom(this.httpClient.get<any[]>(this.baseUrl + '/profiles'))
   }
 
   // Reset Password
@@ -50,8 +47,8 @@ export class UsersService {
         'Authorization': localStorage.getItem('token')!
       })
     }
-    const response = this.httpClient.put<any>(this.baseUrl + 'resetPassword/' + pId, pForm, httpOptions)
-    return response
+    const res = this.httpClient.put<any>(this.baseUrl + 'resetPassword/' + pId, pForm, httpOptions)
+    return res
   }
 
   // myUser
@@ -63,20 +60,31 @@ export class UsersService {
         'Authorization': localStorage.getItem('token')!
       })
     }
-    console.log(localStorage.getItem('token'))
-    return lastValueFrom(this.httpClient.get<any>(this.baseUrl + 'myprofile', httpOptions));
+    return lastValueFrom(this.httpClient.get<any>(this.baseUrl + 'myprofile', httpOptions))
   }
 
   // edit user
 
-  editUser(pForm: FormData, pId: number): Promise<any> {
+  editUser(pForm: any, pId: number): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Authorization': localStorage.getItem('token')!
       })
     }
+    const res = this.httpClient.put<any>(this.baseUrl + pId, pForm, httpOptions)
+    return res
+  }
 
-    return lastValueFrom(this.httpClient.put<any>(this.baseUrl + 'profile/edit', pForm, httpOptions))
+  // delete user
+
+  deleteUser(pId: number): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('token')!
+      })
+    }
+    const res = this.httpClient.delete<any>(this.baseUrl + 'profile/' + pId, httpOptions)
+    return res
   }
 }
 
