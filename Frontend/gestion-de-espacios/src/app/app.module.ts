@@ -1,9 +1,17 @@
+// Modules
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+
+// Directives
+
+import { AdminDirective } from './directives/admin.directive';
+
+// Components
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,17 +24,10 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { EditProfileComponent } from './components/profile/edit-profile/edit-profile.component';
 import { PasswordComponent } from './components/profile/password/password.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
-import { EventsComponent } from './components/calendar/events/events.component';
 import { UiComponent } from './components/calendar/ui/ui.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-
-// Directive
-
-import { AdminDirective } from './directives/admin.directive';
-
-
-
+import { ReserveComponent } from './components/calendar/reserve/reserve.component';
 
 
 @NgModule({
@@ -41,11 +42,9 @@ import { AdminDirective } from './directives/admin.directive';
     EditProfileComponent,
     PasswordComponent,
     CalendarComponent,
-    EventsComponent,
     UiComponent,
+    ReserveComponent,
     AdminDirective
-
-
   ],
   imports: [
     BrowserModule,
