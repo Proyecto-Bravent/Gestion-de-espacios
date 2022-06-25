@@ -8,6 +8,9 @@
           </div>
           <div class="cards__StyledWorkspaceCards">
             <section class="page-contain">
+
+              <!-- Diseño con tres cards desestimado por mi -->
+
               <!-- <a href="#" class="data-card">
                 <h3>SALA DE REUNIONES</h3>
                 <p>Reserva tu la sala de reuniones en función de tus necesidades ¡y evita sorpresas!</p>
@@ -20,8 +23,11 @@
                   </svg>
                 </span>
               </a> -->
+
+              <!-- Card con redirección a reservas -->
+
               <a [routerLink]="['/space']" class="data-card x2">
-                <h3>OFICINAS DE TRABAJO Y SALA DE REUNIONES</h3>
+                <h3><span>RESERVA</span> DE SALA DE REUNIONES Y OFICINAS DE TRABAJO</h3>
                 <p>Comprueba la disponibilidad del espacio que deseas reservar ¡y gestiona tu tiempo!</p>
                 <span class="link-text">
                   Ver todas las opciones
@@ -32,8 +38,11 @@
                   </svg>
                 </span>
               </a>
+
+              <!-- Card con redirección a histórico -->
+
               <a [routerLink]="['/calendar']" class="data-card x2">
-                <h3>HISTORIAL DE RESERVAS</h3>
+                <h3><span>CONSULTA</span> EL HISTÓRICO DE LAS RESERVAS REALIZADAS</h3>
                 <p>Consulta el historico de reservas de cualquiera de los espacios habilitados.</p>
                 <span class="link-text">
                   Ver todas las opciones

@@ -50,9 +50,8 @@ export class UiComponent implements OnInit {
         name: dayObject.format("dddd"),
         value: a,
         indexWeek: dayObject.isoWeekday()
-      };
-    });
-
+      }
+    })
     this.monthSelect = arrayDays
   }
 
