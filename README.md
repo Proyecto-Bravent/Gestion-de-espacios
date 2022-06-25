@@ -1,15 +1,15 @@
-## Get started
+## Comenzamos
 
-### Clone the repo
+### Clona el repositorio
 
 ```shell
 git clone https://github.com/jorgeLanuza/Gestion-de-espacios
 cd gestion-espacios
 ```
 
-### Install npm packages
+### Instala los paquetes npm
 
-Install the `npm` packages described in the `package.json` and verify that it works:
+Instala los paquetes `npm` descritos en el `package.json` y comprueba que todo funciona:
 
 ```shell
 npm install
@@ -19,15 +19,15 @@ npm start
 
 #### npm scripts
 
-These are the most useful commands defined in `package.json`:
+Estos son los comandos más usados y definidos en el `package.json`:
 
-* `npm start` - runs the TypeScript compiler, asset copier, and a server at the same time, all three in "watch mode".
-* `npm run build` - runs the TypeScript compiler and asset copier once.
+* `npm start` 
+* `npm run build` 
 * `npm run serve` - runs `lite-server`.
 
-On command-line start ng serve for run the app.
-Shut it down manually with `Ctrl-C`.
+En la consola de comandos inicia ng serve para arrancar la aplicación.
+Puedes pararla en cualquier momento si ejecutas `Ctrl-C`.
 
 
-## Techniques
+## Técnica empleada en el proyecto
 (wip)
