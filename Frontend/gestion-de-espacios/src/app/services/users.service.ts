@@ -33,7 +33,7 @@ export class UsersService {
     return lastValueFrom(this.httpClient.post<any>(this.baseUrl + 'register', pForm))
   }
 
-  // Mi usuario
+  // Mi usuario solo autorizados
 
   myUser() {
     const httpOptions = {
@@ -57,7 +57,7 @@ export class UsersService {
     return lastValueFrom(this.httpClient.get<any[]>(this.baseUrl + '/profiles'))
   }
 
-  // Resetear contraseña
+  // Resetear contraseña solo autorizados
 
   resetPassword(pForm: any, pId: number): Observable<any> {
     const httpOptions = {

@@ -6,6 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
 
 // Directives
 
@@ -25,8 +27,6 @@ import { EditProfileComponent } from './components/profile/edit-profile/edit-pro
 import { PasswordComponent } from './components/profile/password/password.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { UiComponent } from './components/calendar/ui/ui.component';
-import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { environment } from '../environments/environment';
 import { ReserveComponent } from './components/calendar/reserve/reserve.component';
 import { SpaceComponent } from './components/workspace/space/space.component';
 
