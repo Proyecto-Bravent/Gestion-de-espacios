@@ -1,22 +1,19 @@
 
   <div class="container__StyledMainContainer">
     <section class="left__StyledSpacesLeftSection">
-
-      <!-- Primer flex con sala de reuniones y la primera sala de 4 del espacio central -->
-
       <div class="grid__StyledGridSpaces">
         <div class="text__StyledText">
-          <p>Selecciona tu espacio</p>
+          <p>Selecciona tu <span>espacio</span></p>
         </div>
         <div class="separador-salareuniones">
           <div class="text">
             <p>Sala de reuniones</p>
             <div class="sala-de-reuniones">
-              <i class="fa-solid fa-handshake "></i>
+              <i class="fa-solid fa-handshake">0</i>
             </div>
           </div>
           <div class="text">
-            <p>Espacio central</p>
+            <p>Espacio central Ultrón</p>
             <div class="espacio-central-1">
               <i class="fa-solid fa-computer">1</i>
               <i class="fa-solid fa-computer">2</i>
@@ -25,14 +22,9 @@
             </div>
           </div>
         </div>
-
-        <!--Espacio 1 con el segundo espacio central de 4 ambos  -->
-
-
         <div class="grid__StyledGridSpaces-2">
-
           <div class="text">
-            <p>Espacio 1</p>
+            <p>Espacio Eris</p>
             <div class="separador-sala-1">
               <i class="fa-solid fa-computer">1</i>
               <i class="fa-solid fa-computer">2</i>
@@ -41,7 +33,7 @@
             </div>
           </div>
           <div class="text">
-            <p>Espacio central</p>
+            <p>Espacio central Ares</p>
             <div class="espacio-central-2">
               <i class="fa-solid fa-computer">5</i>
               <i class="fa-solid fa-computer">6</i>
@@ -50,12 +42,9 @@
             </div>
           </div>
         </div>
-
-
-
         <div class="grid__StyledGridSpaces-3">
           <div class="text">
-            <p>Espacio 2</p>
+            <p>Espacio Ceres</p>
             <div class="separador-sala-2">
               <i class="fa-solid fa-computer">5</i>
               <i class="fa-solid fa-computer">6</i>
@@ -63,7 +52,7 @@
           </div>
           <div class="espacio-central-3">
             <div class="text">
-              <p>Espacio 3</p>
+              <p>Espacio Plutón</p>
               <div class="espacio-3">
                 <div class="espacio"><i class="fa-solid fa-computer">7</i></div>
                 <div class="espacio-4">
@@ -71,14 +60,13 @@
                   <i class="fa-solid fa-computer">9</i>
                   <i class="fa-solid fa-computer">10</i>
                   <i class="fa-solid fa-computer">11</i>
-
                 </div>
               </div>
             </div>
           </div>
           <div>
             <div class="text">
-              <p>Espacio central</p>
+              <p>Espacio central Thanos</p>
               <div class="interior-espacio-central-3">
                 <i class="fa-solid fa-computer">9</i>
                 <i class="fa-solid fa-computer">10</i>
@@ -91,6 +79,37 @@
       </div>
     </section>
     <section class="right__StyledFormRightSection">
+      <div class="date__StyledDateForm">
+        <div class="text__StyledText">
+          <p>Elige tus <span>opciones:</span></p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="right">
+          <div class="header">
+            <h4 class="animation a2">*Completa los campos para formalizar la reserva.</h4>
+          </div>
+          <form>
+            <div class="form">
+              <input type="date" class="form-field animation a3" placeholder="Nombre y apellidos*"
+                formControlName="username">
+              <input type="time" class="form-field animation a3" placeholder="E-mail*" formControlName="mail">
+              <input type="password" class="form-field animation a3" placeholder="Contraseña*"
+                formControlName="password">
+              <input type="password" class="form-field animation a3" placeholder="Confirma tu contraseña*"
+                formControlName="repeatPassword">
+              <p>¿Quieres recibir un correo electrónico confirmando la reserva?</p>
+              <div class="labels">
+                <label><input type="radio" name="company" class="form-field animation a4">Opción 0</label>
+                <label><input type="radio" name="company" class="form-field animation a4">Opción 1</label>
+                <!-- <label><input type="radio" name="company" class="form-field animation a4">Bitwork</label> -->
+              </div>
+              <input type="submit" class="resume-button" value="ACEPTAR">
+            </div>
+          </form>
+        </div>
+      </div>
+
 
     </section>
   </div>
