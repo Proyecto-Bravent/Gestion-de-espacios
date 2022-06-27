@@ -6,5 +6,4 @@ export interface Reserve {
   date: string
   status: boolean
   createdAt: string
-  updatedAt: string
 }

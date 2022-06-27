@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
       mail: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required, Validators.required, Validators.pattern('^(?=[A-Z0-9]*[a-z])(?=[a-zA-Z]*[0-9])(?=[a-z0-9]*[A-Z])[a-zA-Z0-9]{8,}$')]),
       repeatPassword: new FormControl('', [Validators.required, Validators.pattern('^(?=[A-Z0-9]*[a-z])(?=[a-zA-Z]*[0-9])(?=[a-z0-9]*[A-Z])[a-zA-Z0-9]{8,}$')]),
-      company: new FormControl('', [Validators.required]),
+      company: new FormControl('', []),
     }, [])
   }
 
@@ -37,7 +37,6 @@ export class RegisterComponent implements OnInit {
 
   async getDataForm() {
     try {
-      // Guardamos la respuesta que nos da la función register de nuestro servicio y su valor y gestionamos el error si lo hay y lo mostramos en pantalla. 
       const res = await this.usersService.register(this.register.value)
       alert(res.success)
       this.router.navigate(['/login'])

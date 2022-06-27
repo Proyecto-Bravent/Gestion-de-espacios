@@ -129,6 +129,12 @@ span {
   &:hover {
     color: var.$dark-blue;
   }
+
+  &:focus {
+    color: green;
+  }
+
+
 }
 
 .fa-handshake {
@@ -307,17 +313,27 @@ span {
   }
 }
 
-// input {
-//   background-color: transparent;
-//   ;
+input {
+  background-color: transparent;
 
-//   &:hover,
-//   &:focus {
-//     background-color: rgba(128, 128, 128, 0.075);
-//     border-radius: 25px;
-//     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.459);
-//   }
-// }
+
+  &:hover,
+  &:focus {
+    background-color: rgba(128, 128, 128, 0.075);
+    border-radius: 25px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.459);
+  }
+}
+
+button {
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 25px;
+
+  // &:focus {
+  //   background-color: rgba(0, 0, 0, 0.5);
+  // }
+}
 
 .animation {
   animation-name: move;
@@ -325,6 +341,7 @@ span {
   animation-fill-mode: both;
   animation-delay: 2s;
 }
+
 
 .a1 {
   animation-delay: 2s;
