@@ -1,0 +1,126 @@
+@use 'var.scss';
+
+.container__StyledProfileAndReservesMainContainer {
+  width: 100%;
+  height: 87.3vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  border: 3px solid rgb(9, 255, 0);
+  background-image: url(../../../assets/images/25101.jpg);
+  background-size: cover;
+}
+
+.left__StyledProfileLeftSection {
+  border: 2px solid green;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__StyledProfileMain {
+  border: 2px solid rgb(255, 187, 0);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.text__StyledTextProfile {
+  font-size: 30px;
+  color: var.$dark-blue;
+  text-align: center;
+  font-family: var.$font-sans;
+  border: 1px solid red;
+}
+
+.form__StyledProfileForm {
+  width: 80%;
+  height: 80%;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.322);
+  border-radius: 25px;
+}
+
+.form__StyledFormUser {
+  border: 1px solid red;
+  width: 80%;
+  height: 80%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.right__StyledProfileRightSection {
+  border: 2px solid blue;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.main__StyledReservesMain {
+  border: 2px solid rgb(247, 0, 255);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.text__StyledTextReserves {
+  font-size: 30px;
+  color: var.$dark-blue;
+  text-align: center;
+  font-family: var.$font-sans;
+  border: 1px solid red;
+}
+
+.cards__StyledReservesCards {
+  width: 80%;
+  height: 80%;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.322);
+  border-radius: 25px;
+}
+
+.app__StyledReserveApp {
+  border: 1px solid red;
+  width: 80%;
+  height: 80%;
+}
+
+i {
+  padding-top: 20px;
+  font-size: 20px;
+  color: var.$dark-blue;
+  transition: all .3s;
+
+  &:hover {
+    color: var.$green
+  }
+}

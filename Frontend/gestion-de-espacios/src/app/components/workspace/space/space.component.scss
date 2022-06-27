@@ -307,13 +307,17 @@ span {
   }
 }
 
-input {
-  background-color: transparent;
+// input {
+//   background-color: transparent;
+//   ;
 
-  &:hover {
-    background-color: rgba(128, 128, 128, 0.075);
-  }
-}
+//   &:hover,
+//   &:focus {
+//     background-color: rgba(128, 128, 128, 0.075);
+//     border-radius: 25px;
+//     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.459);
+//   }
+// }
 
 .animation {
   animation-name: move;

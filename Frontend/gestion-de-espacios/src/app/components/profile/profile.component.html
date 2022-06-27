@@ -1,1 +1,32 @@
-<p>profile works!</p>
+
+  <div class="container__StyledProfileAndReservesMainContainer">
+    <section id="profile" class="left__StyledProfileLeftSection">
+      <div class="main__StyledProfileMain">
+        <div class="text__StyledTextProfile">
+          <p>Mi perfil</p>
+        </div>
+        <div class="form__StyledProfileForm">
+          <div class="form__StyledFormUser"></div>
+        </div>
+        <div class="icon__logout">
+          <a href="#/reserves"><i class="fa-solid fa-arrow-right-from-bracket" title="Logout"></i></a>
+        </div>
+      </div>
+    </section>
+    <section class="right__StyledProfileRightSection">
+      <div id="reserves" class="main__StyledReservesMain">
+        <div class="text__StyledTextReserves">
+          <p>Mis reservas</p>
+        </div>
+        <div class="cards__StyledReservesCards">
+          <div class="app__StyledReserveApp">
+            <app-reserve></app-reserve>
+            <p></p>
+          </div>
+          <!-- <div class="icon__toTop">
+            <a href="#/profile"><i class="fa-solid fa-angle-up"></i></a>
+          </div> -->
+        </div>
+      </div>
+    </section>
+  </div>
