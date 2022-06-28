@@ -14,13 +14,13 @@ export class RegisterComponent implements OnInit {
 
   // Nuestro formulario de registro.
 
-  register: FormGroup
+  FormRegister: FormGroup
 
   constructor(
     private usersService: UsersService,
     private router: Router
   ) {
-    this.register = new FormGroup({
+    this.FormRegister = new FormGroup({
 
       // Password validators are --> ^ - Comienzo del string, (?=[A-Z0-9]*[a-z]) miramos para asegurar al menos un carácter en minúsculas, (?=[a-zA-Z]*[0-9]) nos aseguramos al menos un número , (?=[a-z0-9]*[A-Z]) pedimos al menos una mayúscula, [a-zA-Z0-9]{8,} pedimos ocho o más caracteres, $ fin del string.
 
@@ -35,13 +35,33 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
   async getDataForm() {
+
     try {
-      const res = await this.usersService.register(this.register.value)
-      alert(res.success)
-      this.router.navigate(['/login'])
+      console.log(this.FormRegister.value);
+
+      // Guardamos la respuesta que nos da la función register de nuestro servicio y su valor y gestionamos el error si lo hay y lo mostramos en pantalla. 
+
+      if (this.FormRegister.value.company == "bravent") {
+        const res = await this.usersService.registerBravent(this.FormRegister.value)
+        console.log(res)
+
+        this.router.navigate(['/login'])
+
+      }
+      else {
+        const res = await this.usersService.registerBitWork(this.FormRegister.value)
+        console.log(res)
+
+        this.router.navigate(['/login'])
+      }
+
     } catch (err) {
       console.log(err)
     }
   }
 }
+
+
+

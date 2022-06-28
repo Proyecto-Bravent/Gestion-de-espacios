@@ -12,7 +12,7 @@ export class UsersService {
 
   constructor(private httpClient: HttpClient) {
 
-    this.baseUrl = 'http://localhost:3000/api/'
+    this.baseUrl = 'http://localhost:7107/api/Authenticate/'
   }
 
   // Loggin del usuario
@@ -29,8 +29,20 @@ export class UsersService {
 
   // Register
 
-  register(pForm: any): Promise<any> {
-    return lastValueFrom(this.httpClient.post<any>(this.baseUrl + 'register', pForm))
+  // register(pForm: any): Promise<any> {
+  //   return lastValueFrom(this.httpClient.post<any>(this.baseUrl + 'register', pForm))
+  // }
+
+  // Register
+
+
+
+  registerBravent(pForm: any): Promise<any> {
+    return lastValueFrom(this.httpClient.post<any>(this.baseUrl + 'registerbravent', pForm))
+  }
+
+  registerBitWork(pForm: any): Promise<any> {
+    return lastValueFrom(this.httpClient.post<any>(this.baseUrl + 'registerbitwork', pForm))
   }
 
   // Mi usuario solo autorizados
