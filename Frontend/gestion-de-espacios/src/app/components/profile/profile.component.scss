@@ -6,13 +6,11 @@
   display: flex;
   flex-direction: column;
   padding-top: 30px;
-  border: 3px solid rgb(9, 255, 0);
-  background-image: url(../../../assets/images/25101.jpg);
+  background-image: url(../../../assets/images/RE4RWO3.jpg);
   background-size: cover;
 }
 
 .left__StyledProfileLeftSection {
-  border: 2px solid green;
   width: 100%;
   height: 100%;
   display: flex;
@@ -20,8 +18,11 @@
   justify-content: center;
 }
 
+span {
+  color: var.$green;
+}
+
 .main__StyledProfileMain {
-  border: 2px solid rgb(255, 187, 0);
   width: 100%;
   height: 100%;
   display: flex;
@@ -32,30 +33,121 @@
 
 .text__StyledTextProfile {
   font-size: 30px;
-  color: var.$dark-blue;
+  color: white;
   text-align: center;
+  padding-bottom: 20px;
   font-family: var.$font-sans;
-  border: 1px solid red;
+
+  &:hover {
+    color: var.$green;
+  }
+}
+
+label {
+  font-family: var.$font-sans;
+  font-size: var.$fz-xs;
+  color: white;
+  padding: 20px 20px 20px 0px;
+
 }
 
 .form__StyledProfileForm {
   width: 80%;
   height: 80%;
-  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(3, 3, 0, 0.5);
+  border-radius: 25px;
+
+  &:hover {
+    border: 2px solid rgba(217, 221, 2, 0.603);
+    box-shadow: rgba(245, 245, 220, 0.877) 0px 10px 30px -15px;
+    // background: #d9dd0277;
+  }
+
+}
+
+.form__StyledFormUser {
+  width: 80%;
+  height: 80%;
+  overflow: hidden;
+  border-radius: 10px;
+  padding-right: 30px;
+}
+
+.course-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.322);
-  border-radius: 25px;
 }
 
-.form__StyledFormUser {
-  border: 1px solid red;
-  width: 80%;
-  height: 80%;
+.course {
+  display: flex;
+  max-width: 100%;
+  overflow: hidden;
+  width: 100%;
+  gap: 10px;
+  height: 240px;
+  position: relative;
 }
 
+.img {
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(255, 255, 255, 0.192)
+}
+
+.course h6 {
+  color: white;
+  opacity: 1;
+  margin: 0;
+  text-transform: uppercase;
+  font-family: var.$font-sans
+}
+
+.course h2 {
+  font-family: var.$font-sans;
+  font-size: var.$fz-md;
+  color: white;
+  padding-top: 20px;
+}
+
+.course-preview {
+  background-color: rgba(217, 221, 2, 0.603);
+  color: #fff;
+  padding: 10px 30px 30px 30px;
+  width: 190px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.course-preview a {
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  opacity: 1;
+  text-decoration: none;
+  font-family: var.$font-sans;
+
+  &:hover {
+    color: var.$dark-blue;
+  }
+}
+
+.course-info {
+  padding: 10px 20px 20px 20px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+}
 
 
 
@@ -69,7 +161,6 @@
 
 
 .right__StyledProfileRightSection {
-  border: 2px solid blue;
   width: 100%;
   height: 100%;
   display: flex;
@@ -79,7 +170,6 @@
 }
 
 .main__StyledReservesMain {
-  border: 2px solid rgb(247, 0, 255);
   width: 100%;
   height: 100%;
   display: flex;
@@ -90,37 +180,42 @@
 
 .text__StyledTextReserves {
   font-size: 30px;
-  color: var.$dark-blue;
+  color: white;
   text-align: center;
   font-family: var.$font-sans;
-  border: 1px solid red;
+  padding-bottom: 20px;
+
+  &:hover {
+    color: var.$green;
+  }
 }
 
 .cards__StyledReservesCards {
   width: 80%;
   height: 80%;
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.322);
+  background-color: rgba(3, 3, 0, 0.5);
   border-radius: 25px;
+
+  &:hover {
+    border: 2px solid rgba(217, 221, 2, 0.603);
+    box-shadow: rgba(245, 245, 220, 0.877) 0px 10px 30px -15px;
+  }
 }
 
 .app__StyledReserveApp {
-  border: 1px solid red;
   width: 80%;
   height: 80%;
+  overflow: scroll;
+  border-radius: 10px;
 }
 
 i {
-  padding-top: 20px;
-  font-size: 20px;
-  color: var.$dark-blue;
-  transition: all .3s;
 
-  &:hover {
-    color: var.$green
-  }
+  font-size: 20px;
+  color: var.$green;
+  transition: all .1s;
 }

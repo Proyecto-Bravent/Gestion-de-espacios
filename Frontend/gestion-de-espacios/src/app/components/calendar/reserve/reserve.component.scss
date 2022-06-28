@@ -1,0 +1,59 @@
+@use 'var.scss';
+
+.course {
+  display: flex;
+  max-width: 100%;
+  overflow: hidden;
+  width: 100%;
+  gap: 10px;
+  height: 100%;
+  position: relative;
+  padding-bottom: 3px;
+}
+
+
+
+.course h6 {
+  color: white;
+  opacity: 1;
+  margin: 0;
+  text-transform: uppercase;
+  font-family: var.$font-sans
+}
+
+.course h2 {
+  margin: 10px 0;
+  font-family: var.$font-sans;
+  font-size: var.$fz-md;
+  color: #fff;
+}
+
+.course-preview {
+  background-color: rgba(217, 221, 2, 0.603);
+  color: #fff;
+  padding: 30px;
+  width: 200px;
+}
+
+span {
+  color: var.$green;
+}
+
+.course-preview a {
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  opacity: 1;
+  text-decoration: none;
+  font-family: var.$font-sans;
+
+  &:hover {
+    color: var.$dark-blue;
+  }
+}
+
+.course-info {
+  padding: 10px 20px 20px 20px;
+  position: relative;
+  width: 100%;
+}

@@ -25,7 +25,6 @@
 .supportContainer__StyledSupportContainer {
   background-color: #dadd02;
   display: flex;
-  // border: 1px solid #dadd02;
   justify-content: space-between;
   width: 100%;
   height: 38px;
@@ -48,7 +47,6 @@
   font-family: var.$font-sans;
   text-decoration: none;
   padding-right: 10px;
-
 
   a {
     color: black;
@@ -141,7 +139,6 @@
     color: black;
   }
 }
-
 
 .main__StyledMainNav {
   display: flex;
