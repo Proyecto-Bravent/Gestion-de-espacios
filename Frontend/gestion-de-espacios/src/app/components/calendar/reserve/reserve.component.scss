@@ -14,18 +14,27 @@
 
 
 .course h6 {
-  color: white;
   opacity: 1;
   margin: 0;
   text-transform: uppercase;
-  font-family: var.$font-sans
+  font-family: var.$font-sans;
+  color: var.$dark-blue;
+  text-align: center;
 }
 
 .course h2 {
+  text-align: center;
+  color: var.$dark-blue;
   margin: 10px 0;
   font-family: var.$font-sans;
   font-size: var.$fz-md;
-  color: #fff;
+}
+
+.course h3 {
+  color: white;
+  margin: 10px 0;
+  font-family: var.$font-sans;
+  font-size: var.$fz-md;
 }
 
 .course-preview {

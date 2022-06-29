@@ -1,101 +1,102 @@
 
-  <div class="container__StyledMainContainer">
-    <section class="left__StyledSpacesLeftSection">
-      <div class="grid__StyledGridSpaces">
-        <div class="text__StyledText">
-          <p>Selecciona tu <span>espacio</span></p>
-        </div>
-        <div class="separador-salareuniones">
-          <div class="text">
-            <p>Sala de reuniones</p>
-            <div class="sala-de-reuniones">
-              <button><i class="fa-solid fa-handshake">0</i></button>
-            </div>
+  <form [formGroup]="formSpace" (ngSubmit)="getDataForm()">
+    <div class="container__StyledMainContainer">
+      <section class="left__StyledSpacesLeftSection">
+        <div class="grid__StyledGridSpaces">
+          <div class="text__StyledText">
+            <p>Selecciona tu <span>espacio</span></p>
           </div>
-          <div class="text">
-            <p>Espacio central Ultrón</p>
-            <div class="espacio-central-1">
-              <button><i class="fa-solid fa-computer">1</i></button>
-              <button><i class="fa-solid fa-computer">2</i></button>
-              <button><i class="fa-solid fa-computer">3</i></button>
-              <button><i class="fa-solid fa-computer">4</i></button>
-            </div>
-          </div>
-        </div>
-        <div class="grid__StyledGridSpaces-2">
-          <div class="text">
-            <p>Espacio Eris Bitwork</p>
-            <div class="separador-sala-1">
-              <button><i class="fa-solid fa-computer">1</i></button>
-              <button><i class="fa-solid fa-computer">2</i></button>
-              <button><i class="fa-solid fa-computer">3</i></button>
-              <button><i class="fa-solid fa-computer">4</i></button>
-            </div>
-          </div>
-          <div class="text">
-            <p>Espacio central Ares</p>
-            <div class="espacio-central-2">
-              <button><i class="fa-solid fa-computer">5</i></button>
-              <button><i class="fa-solid fa-computer">6</i></button>
-              <button><i class="fa-solid fa-computer">7</i></button>
-              <button><i class="fa-solid fa-computer">8</i></button>
-            </div>
-          </div>
-        </div>
-        <div class="grid__StyledGridSpaces-3">
-          <div class="text">
-            <p>Espacio Ceres</p>
-            <div class="separador-sala-2">
-              <button><i class="fa-solid fa-computer">5</i></button>
-              <button><i class="fa-solid fa-computer">6</i></button>
-            </div>
-          </div>
-          <div class="espacio-central-3">
+          <div class="separador-salareuniones">
             <div class="text">
-              <p>Espacio Plutón Marketing</p>
-              <div class="espacio-3">
-                <div class="espacio"><button><i class="fa-solid fa-computer">7</i></button></div>
-                <div class="espacio-4">
-                  <button type="button"><i class="fa-solid fa-computer">8</i></button>
-                  <button><i class="fa-solid fa-computer">9</i></button>
-                  <button><i class="fa-solid fa-computer">10</i></button>
-                  <button><i class="fa-solid fa-computer">11</i></button>
+              <p>Sala de reuniones</p>
+              <div class="sala-de-reuniones">
+                <button formControlName="spaceId" value="0"><i class="fa-solid fa-handshake">0</i></button>
+              </div>
+            </div>
+            <div class="text">
+              <p>Espacio central Ultrón</p>
+              <div class="espacio-central-1">
+                <button formControlName="spaceId" value="12"><i class="fa-solid fa-computer">1</i></button>
+                <button formControlName="spaceId" value="13"><i class="fa-solid fa-computer">2</i></button>
+                <button formControlName="spaceId" value="14"><i class="fa-solid fa-computer">3</i></button>
+                <button formControlName="spaceId" value="15"><i class="fa-solid fa-computer">4</i></button>
+              </div>
+            </div>
+          </div>
+          <div class="grid__StyledGridSpaces-2">
+            <div class="text">
+              <p>Espacio Eris Bitwork</p>
+              <div class="separador-sala-1">
+                <button formControlName="spaceId" value="1"><i class="fa-solid fa-computer">1</i></button>
+                <button formControlName="spaceId" value="2"><i class="fa-solid fa-computer">2</i></button>
+                <button formControlName="spaceId" value="3"><i class="fa-solid fa-computer">3</i></button>
+                <button formControlName="spaceId" value="4"><i class="fa-solid fa-computer">4</i></button>
+              </div>
+            </div>
+            <div class="text">
+              <p>Espacio central Ares</p>
+              <div class="espacio-central-2">
+                <button formControlName="spaceId" value="16"><i class="fa-solid fa-computer">5</i></button>
+                <button formControlName="spaceId" value="17"><i class="fa-solid fa-computer">6</i></button>
+                <button formControlName="spaceId" value="18"><i class="fa-solid fa-computer">7</i></button>
+                <button formControlName="spaceId" value="19"><i class="fa-solid fa-computer">8</i></button>
+              </div>
+            </div>
+          </div>
+          <div class="grid__StyledGridSpaces-3">
+            <div class="text">
+              <p>Espacio Ceres</p>
+              <div class="separador-sala-2">
+                <button formControlName="spaceId" value="5"><i class="fa-solid fa-computer">5</i></button>
+                <button formControlName="spaceId" value="6"><i class="fa-solid fa-computer">6</i></button>
+              </div>
+            </div>
+            <div class="espacio-central-3">
+              <div class="text">
+                <p>Espacio Plutón Marketing</p>
+                <div class="espacio-3">
+                  <div class="espacio"><button formControlName="spaceId" value="7"><i
+                        class="fa-solid fa-computer">7</i></button></div>
+                  <div class="espacio-4">
+                    <button formControlName="spaceId" value="8"><i class="fa-solid fa-computer">8</i></button>
+                    <button formControlName="spaceId" value="9"><i class="fa-solid fa-computer">9</i></button>
+                    <button formControlName="spaceId" value="10"><i class="fa-solid fa-computer">10</i></button>
+                    <button formControlName="spaceId" value="11"><i class="fa-solid fa-computer">11</i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="text">
+                <p>Espacio central Thanos</p>
+                <div class="interior-espacio-central-3">
+                  <button formControlName="spaceId" value="20"><i class="fa-solid fa-computer">9</i></button>
+                  <button formControlName="spaceId" value="21"><i class="fa-solid fa-computer">10</i></button>
+                  <button formControlName="spaceId" value="22"><i class="fa-solid fa-computer">11</i></button>
+                  <button formControlName="spaceId" value="23"><i class="fa-solid fa-computer">12</i></button>
                 </div>
               </div>
             </div>
           </div>
-          <div>
-            <div class="text">
-              <p>Espacio central Thanos</p>
-              <div class="interior-espacio-central-3">
-                <button><i class="fa-solid fa-computer">9</i></button>
-                <button><i class="fa-solid fa-computer">10</i></button>
-                <button><i class="fa-solid fa-computer">11</i></button>
-                <button><i class="fa-solid fa-computer">12</i></button>
-              </div>
+        </div>
+      </section>
+      <section class="right__StyledFormRightSection">
+        <div class="date__StyledDateForm">
+          <div class="text__StyledText">
+            <p>Elige tus <span>opciones:</span></p>
+          </div>
+        </div>
+        <div class="container">
+          <div class="right">
+            <div class="header">
+              <h4 class="animation a2">*Completa los campos para formalizar la reserva.</h4>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="right__StyledFormRightSection">
-      <div class="date__StyledDateForm">
-        <div class="text__StyledText">
-          <p>Elige tus <span>opciones:</span></p>
-        </div>
-      </div>
-      <div class="container">
-        <div class="right">
-          <div class="header">
-            <h4 class="animation a2">*Completa los campos para formalizar la reserva.</h4>
-          </div>
-          <form>
+
             <div class="form">
               <input type="date" class="form-field animation a3" required="require" formControlName="username">
-              <input type="time" class="form-field animation a3" placeholder="E-mail*" formControlName="mail">
-              <input type="password" class="form-field animation a3" placeholder="Contraseña*"
-                formControlName="password">
-              <input type="password" class="form-field animation a3" placeholder="Confirma tu contraseña*"
+              <input type="time" class="form-field animation a3" placeholder="E-mail*" formControlName="date">
+              <input type="text" class="form-field animation a3" placeholder="Pepe*" formControlName="password">
+              <input type="text" class="form-field animation a3" placeholder="Confirma tu Villuela*"
                 formControlName="repeatPassword">
               <p>*¿Quieres recibir un correo electrónico confirmando la reserva?</p>
               <div class="labels">
@@ -103,12 +104,11 @@
                 <label><input type="radio" name="company" class="form-field animation a4">Opción 1</label>
                 <!-- <label><input type="radio" name="company" class="form-field animation a4">Bitwork</label> -->
               </div>
-              <input type="submit" class="resume-button" value="ACEPTAR">
+              <input [disabled]="formSpace.invalid" type="submit" class="resume-button" value="ACEPTAR">
             </div>
-          </form>
+
+          </div>
         </div>
-      </div>
-
-
-    </section>
-  </div>
+      </section>
+    </div>
+  </form>

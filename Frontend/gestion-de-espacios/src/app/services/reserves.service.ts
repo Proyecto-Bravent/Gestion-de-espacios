@@ -105,3 +105,7 @@ export class ReservesService {
     return lastValueFrom(this.httpClient.get<any[]>(`${this.baseUrl}/date/${pDate}/space/${pSpaceId}/user/${pUserId}/status/${pStatus}`))
   }
 }
+
+
+// Si va a reservar un puesto tiene que salir el dia de la reserva
+// Si es sala de reuniones solo sale la hora de la reserva

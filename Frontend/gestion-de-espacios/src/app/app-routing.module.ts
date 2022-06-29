@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
 import { SpaceComponent } from './components/workspace/space/space.component';
@@ -18,7 +19,7 @@ const routes: Routes = [
   { path: 'profile/:idprofile', component: ProfileComponent },
   { path: 'calendar', component: CalendarComponent },
   { path: 'space', component: SpaceComponent },
-  { path: "**", redirectTo: "/home" },
+  { path: "**", component: NotFoundComponent },
 
 ];
 

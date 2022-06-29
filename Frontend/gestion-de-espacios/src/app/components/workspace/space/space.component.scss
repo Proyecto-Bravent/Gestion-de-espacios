@@ -330,9 +330,10 @@ button {
   background-color: rgba(255, 255, 255, 0);
   border-radius: 25px;
 
-  // &:focus {
-  //   background-color: rgba(0, 0, 0, 0.5);
-  // }
+  &:focus {
+    background-color: rgba(0, 0, 0, 0.09);
+
+  }
 }
 
 .animation {
