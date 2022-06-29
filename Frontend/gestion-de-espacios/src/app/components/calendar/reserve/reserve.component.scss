@@ -6,7 +6,7 @@
   overflow: hidden;
   width: 100%;
   gap: 10px;
-  height: 100%;
+  max-height: 70%;
   position: relative;
   padding-bottom: 3px;
 }
@@ -14,18 +14,13 @@
 
 
 .course h6 {
-  opacity: 1;
-  margin: 0;
   text-transform: uppercase;
   font-family: var.$font-sans;
   color: var.$dark-blue;
-  text-align: center;
 }
 
 .course h2 {
-  text-align: center;
   color: var.$dark-blue;
-  margin: 10px 0;
   font-family: var.$font-sans;
   font-size: var.$fz-md;
 }
@@ -40,9 +35,9 @@
 .course-preview {
   background-color: rgba(217, 221, 2, 0.603);
   color: #fff;
-  padding: 30px;
-  height: 100%;
-  border-radius: 25px 25px 0px 0px;
+  padding: 20px;
+  height: 70%;
+  border-radius: 25px;
 }
 
 span {
@@ -63,7 +58,7 @@ span {
 }
 
 .course-info {
-  padding: 10px 20px 20px 20px;
+  padding: 0px 10px 10px 10px;
   position: relative;
   width: 100%;
 }

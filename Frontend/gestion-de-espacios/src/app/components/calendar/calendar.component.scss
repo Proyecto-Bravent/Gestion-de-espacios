@@ -88,7 +88,7 @@ label {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-y: scroll;
+  overflow-y: auto;
   scrollbar-width: thin;
 
 }
@@ -224,6 +224,8 @@ label {
   align-items: center;
   background-color: rgba(3, 3, 0, 0.5);
   border-radius: 25px;
+  overflow: auto;
+  scrollbar-width: thin;
 
   &:hover {
     border: 2px solid rgba(217, 221, 2, 0.603);

@@ -1,9 +1,10 @@
 export interface Reserve {
   id: number
-  name: string
+  workGroupId: number
   spaceId: number
   userId: number
-  date: string
+  dateHour: string
+  dateDay: string
   status: boolean
-  createdAt: string
+  description: string
 }

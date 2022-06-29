@@ -23,7 +23,6 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { WorkspaceComponent } from './components/workspace/workspace.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { EditProfileComponent } from './components/profile/edit-profile/edit-profile.component';
 import { PasswordComponent } from './components/profile/password/password.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { UiComponent } from './components/calendar/ui/ui.component';
@@ -41,7 +40,6 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     RegisterComponent,
     WorkspaceComponent,
     ProfileComponent,
-    EditProfileComponent,
     PasswordComponent,
     CalendarComponent,
     UiComponent,
