@@ -23,11 +23,11 @@
                   </div>
                   <h2><span>Nombre:</span>{{ myProfile.name }}</h2>
                   <h2><span>Compañía:</span>{{ myProfile.company }}</h2>
-                  <label for="image"><span>Cambiar foto de perfil</span></label>
-                  <input id="image" type="file" value="Cambiar foto de perfil">
-                  <h2 title="Elige una nueva contraseña"><span>Contraseña:</span> Pulsa <span><a
-                        href="#">aquí</a></span> para editar tu
-                    contraseña</h2>
+                  <h2><span>Cambiar contraseña:</span></h2>
+                  <button class="pass-btn" title="Elige una nueva contraseña" type="button" data-bs-toggle="modal"
+                    data-bs-target="#editPassword"><i class="fa-solid fa-key password"></i></button>
+                  <app-password [myProfile]="myProfile"></app-password>
+                  <input class="img-root" id="image" type="file" value="Cambiar foto de perfil">
                 </div>
               </div>
             </div>

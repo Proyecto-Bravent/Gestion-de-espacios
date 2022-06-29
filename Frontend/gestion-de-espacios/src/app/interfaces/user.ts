@@ -3,7 +3,7 @@ export interface User {
   username: string,
   mail: string,
   password: string,
-  repeatPassword: string,
+  repeatPass: string,
   img_avatar: string,
   role: number,
   company: string,
