@@ -23,12 +23,19 @@
 }
 
 .page-contain {
+
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   padding: 2em;
   font-family: 'Open Sans', sans-serif;
+  animation-name: move;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-delay: 0.2s;
+  transition: .5s;
 }
 
 .text__StyledWorkspaceText {
@@ -59,6 +66,14 @@ span {
   }
 }
 
+.text__StyledWorkspaceText h2 {
+  font-size: clamp(20px, 6vw, 90px);
+  text-align: center;
+  font-family: var.$font-sans;
+  font-weight: 600;
+}
+
+
 .data-card {
   background-color: rgba(3, 3, 0, 0.5);
   display: flex;
@@ -84,6 +99,8 @@ span {
     border-bottom: 2px solid var.$green;
     transition: color .45s ease, border .45s ease;
   }
+
+
 
   h4 {
     color: white;
@@ -161,40 +178,23 @@ span {
   }
 }
 
-@keyframes point {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(.125em);
-  }
+.animation {
+  animation-name: move;
+  animation-duration: 3s;
+  animation-fill-mode: both;
 }
 
 @keyframes move {
   0% {
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-40px);
+    transform: translateY(-240px);
   }
 
   100% {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-  }
-}
-
-@keyframes page-contain {
-  0% {
-    opacity: 0;
-    width: 0;
-  }
-
-  100% {
-    opacity: 1;
-    // padding: 20px 40px;
-    width: 0px;
   }
 }
 

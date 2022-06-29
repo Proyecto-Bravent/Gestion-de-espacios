@@ -48,7 +48,6 @@ p {
   color: var.$green;
   font-family: var.$font-sans;
   font-size: var.$fz-lg;
-
 }
 
 .resume-button {
@@ -63,6 +62,11 @@ p {
   font-weight: 600;
   margin: 0px 0px 0px 22px;
   background-color: var.$green;
+  animation-name: move;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-delay: 0.2s;
+  transition: .5s;
 
   &:hover,
   &focus,
@@ -70,5 +74,19 @@ p {
     outline: currentcolor none medium;
     background-color: var.$white;
     color: black;
+  }
+}
+
+@keyframes move {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-240px);
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
 }

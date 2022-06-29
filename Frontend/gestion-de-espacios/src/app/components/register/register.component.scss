@@ -8,6 +8,7 @@
 .container {
   display: flex;
   height: 87.3vh;
+  width: 100%;
   font-family: 'Gelion';
 }
 
@@ -16,13 +17,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
   animation-name: left;
-  animation-duration: 1s;
+  animation-duration: .5s;
   animation-fill-mode: both;
-  animation-delay: 1s;
-  transition: 1s;
-  background-image: url(../../../assets/images/4858794.jpg);
+  animation-delay: 0.2s;
+  transition: .5s;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -134,23 +133,23 @@ input {
 }
 
 .a1 {
-  animation-delay: 2s;
+  animation-delay: 1s;
 }
 
 .a2 {
-  animation-delay: 2.1s;
+  animation-delay: 1.1s;
 }
 
 .a3 {
-  animation-delay: 2.2s;
+  animation-delay: 1.2s;
 }
 
 .a4 {
-  animation-delay: 2.3s;
+  animation-delay: 1.3s;
 }
 
 .a5 {
-  animation-delay: 2.4s;
+  animation-delay: 1.4s;
 }
 
 @keyframes move {
