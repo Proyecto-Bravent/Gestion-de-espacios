@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
       // Password validators are --> ^ - Comienzo del string, (?=[A-Z0-9]*[a-z]) miramos para asegurar al menos un carácter en minúsculas, (?=[a-zA-Z]*[0-9]) nos aseguramos al menos un número , (?=[a-z0-9]*[A-Z]) pedimos al menos una mayúscula, [a-zA-Z0-9]{8,} pedimos ocho o más caracteres, $ fin del string.
 
       username: new FormControl('', [Validators.required]),
-      mail: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required, Validators.required, Validators.pattern('^(?=[A-Z0-9]*[a-z])(?=[a-zA-Z]*[0-9])(?=[a-z0-9]*[A-Z])[a-zA-Z0-9]{8,}$')]),
       repeatPassword: new FormControl('', [Validators.required, Validators.pattern('^(?=[A-Z0-9]*[a-z])(?=[a-zA-Z]*[0-9])(?=[a-z0-9]*[A-Z])[a-zA-Z0-9]{8,}$')]),
       company: new FormControl('', []),
@@ -47,14 +47,14 @@ export class RegisterComponent implements OnInit {
         const res = await this.usersService.registerBravent(this.FormRegister.value)
         console.log(res)
 
-        this.router.navigate(['/login'])
+        this.router.navigate(['/workspace'])
 
       }
       else {
         const res = await this.usersService.registerBitWork(this.FormRegister.value)
         console.log(res)
 
-        this.router.navigate(['/login'])
+        this.router.navigate(['/workspace'])
       }
 
     } catch (err) {

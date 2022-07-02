@@ -75,7 +75,7 @@ label {
   border-radius: 25px;
 
   &:hover {
-    border: 2px solid rgba(217, 221, 2, 0.603);
+    // border: 2px solid rgba(217, 221, 2, 0.603);
     box-shadow: rgba(245, 245, 220, 0.877) 0px 10px 30px -15px;
     // background: #d9dd0277;
   }
@@ -94,6 +94,8 @@ label {
 }
 
 .form__StyledFormUser {
+  display: flex;
+  flex-direction: column;
   width: 80%;
   height: 80%;
   border-radius: 10px;
@@ -109,6 +111,7 @@ label {
 
 .course {
   display: flex;
+  flex-direction: column;
   max-width: 100%;
   width: 100%;
   gap: 10px;
@@ -228,7 +231,7 @@ label {
   scrollbar-width: thin;
 
   &:hover {
-    border: 2px solid rgba(217, 221, 2, 0.603);
+    // border: 2px solid rgba(217, 221, 2, 0.603);
     box-shadow: rgba(245, 245, 220, 0.877) 0px 10px 30px -15px;
   }
 }

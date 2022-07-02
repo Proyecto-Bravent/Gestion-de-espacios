@@ -12,7 +12,7 @@ export class ReservesService {
 
   constructor(private httpClient: HttpClient) {
 
-    this.baseUrl = 'http://localhost:3000/api/reserves'
+    this.baseUrl = 'https://localhost:7188/api/reserves'
   }
 
   // Coge todas las reservas

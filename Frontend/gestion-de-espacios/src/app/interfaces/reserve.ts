@@ -1,6 +1,6 @@
 export interface Reserve {
   id: number
-  workGroupId: number
+
   spaceId: number
   userId: number
   dateHour: string

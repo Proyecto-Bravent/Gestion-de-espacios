@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Reserve } from 'src/app/interfaces/reserve';
 import { ReservesService } from 'src/app/services/reserves.service';
 
 @Component({
@@ -11,21 +12,19 @@ import { ReservesService } from 'src/app/services/reserves.service';
 export class SpaceComponent implements OnInit {
 
   formSpace: FormGroup
+  reserve: Reserve[] = []
+  reserveFiltered: Reserve[] = []
 
   constructor(
     private reservesService: ReservesService,
     private router: Router,
-    private formBuilder: FormBuilder
   ) {
 
 
 
-    this.formSpace = this.formBuilder.group({
-      name: new FormControl('', [Validators.required]),
+    this.formSpace = new FormGroup({
       spaceId: new FormControl('', [Validators.required, Validators.requiredTrue]),
-      userId: new FormControl('', [Validators.required]),
-      status: new FormControl('', [Validators.required]),
-      createdAt: new FormControl('', [Validators.required]),
+      name: new FormControl('', [Validators.required]),
       date: new FormControl('', [Validators.required]),
     })
   }

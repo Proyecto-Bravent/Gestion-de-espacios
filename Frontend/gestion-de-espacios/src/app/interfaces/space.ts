@@ -2,9 +2,7 @@ export interface Space {
   id: number,
   name: string,
   date: string,
-  category: number,
-  description: string,
+  role: string,
   status: boolean,
-  createdAt: string,
-  updatedAt: string,
+
 }

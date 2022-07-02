@@ -1,11 +1,9 @@
 export interface User {
   id: number,
   username: string,
-  mail: string,
+  email: string,
   password: string,
   repeatPass: string,
-  img_avatar: string,
-  role: number,
-  company: string,
+  role: string,
   token: string,
 }

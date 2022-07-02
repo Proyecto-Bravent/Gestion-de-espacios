@@ -8,7 +8,7 @@ import { Reserve } from 'src/app/interfaces/reserve';
 })
 export class ReserveComponent implements OnInit {
 
-  arrReserves: Reserve[] = []
+
 
   constructor() { }
 

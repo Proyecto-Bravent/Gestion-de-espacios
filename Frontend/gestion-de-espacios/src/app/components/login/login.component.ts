@@ -21,13 +21,13 @@ export class LoginComponent implements OnInit {
   constructor(private usersServices: UsersService, private authServices: AuthService,
     private router: Router) { }
 
-  async googleOnLogin() {
-    try {
-      this.authServices.loginGoogle()
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  // async googleOnLogin() {
+  //   try {
+  //     this.authServices.loginGoogle()
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
 
   ngOnInit(): void {
     if (localStorage.getItem('user-token') !== null) {

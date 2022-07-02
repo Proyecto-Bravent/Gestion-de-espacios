@@ -12,7 +12,7 @@ export class UsersService {
 
   constructor(private httpClient: HttpClient) {
 
-    this.baseUrl = 'http://localhost:7107/api/Authenticate/'
+    this.baseUrl = 'https://localhost:7188/api/Authenticate/'
   }
 
   // Loggin del usuario
