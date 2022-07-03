@@ -24,16 +24,24 @@ export class SpaceComponent implements OnInit {
 
 
     this.formReserve = new FormGroup({
-      spaceId: new FormControl('', [Validators.required, Validators.requiredTrue]),
-      name: new FormControl('', [Validators.required]),
-      date: new FormControl('', [Validators.required]),
-      description: new FormControl('', []),
+      spaceId: new FormControl('', [
+        Validators.required, Validators.requiredTrue
+      ]),
+      name: new FormControl('', [
+        Validators.required
+      ]),
+      date: new FormControl('', [
+        Validators.required
+      ]),
+      description: new FormControl('', [
+
+      ]),
     })
   }
 
 
   async ngOnInit(): Promise<void> {
-    this.reserve = await this.reservesService.getAllReserves()
+    this.reserve = await this.reservesService.getReservesByStatus(true)
     this.reserveFiltered = [...this.reserve]
   }
 
@@ -41,7 +49,7 @@ export class SpaceComponent implements OnInit {
 
     // Cogemos la fecha del formulario
 
-    this.formReserve.value.date = moment(this.formReserve.value.date).format('YYYY-MM-DD HH:mm:ss')
+    this.formReserve.value.date = moment(this.formReserve.value.date).format('YYYY-MM-DD HH:mm')
 
     // Creamos la reserva
 
@@ -50,8 +58,8 @@ export class SpaceComponent implements OnInit {
       if (res.id_reserve) {
         alert('Reserva creada')
         this.formReserve.reset()
-        this.reserve = await this.reservesService.getAllReserves()
-        this.router.navigateByUrl('/space')
+        this.reserve = await this.reservesService.getReservesByStatus(true)
+        this.router.navigateByUrl('/calendar')
       } else {
         alert('Error al crear la reserva')
       }
