@@ -1,29 +1,8 @@
 
   <section class="layout__StyledContent">
     <header class="nav__StyledHeader">
-
-      <!-- Barra superior -->
-
       <div class="support__StyledSupport">
         <div class="supportContainer__StyledSupportContainer">
-
-          <!-- Lado izquierdo de la barra -->
-          <!-- 
-          <div class="support__StyledLeftSupport">
-            <div class="contact__StyledContactSupport">
-              <div class="email__StyledMail">
-                <a href="mailto:info@bravent.net">info@bravent.net</a>
-              </div>
-              <div class="phone__StyledPhone">
-                <span>
-                  <a href="tel:+34 91 240 47 85">+34 91 240 47 85</a>
-                </span>
-              </div>
-            </div>
-          </div> -->
-
-          <!-- Lado derecho de la barra -->
-
           <div class="support__StyledRightSupport">
             <ul class="support__StyledSocialLinks" role="list">
               <li class="item__StyledSocialItem">
@@ -90,35 +69,30 @@
             <div class="menu__StyledMainMenu">
               <nav class="main__StyledMainNav">
                 <ul class="menu__StyledBraventMenu" role="list">
-                  <!-- <li class="item__StyledMenuItem">
-                    <a class="link__StyledMenuLink"  href="#">ACERCA DE</a>
-                    </li> -->
                   <li class="item__StyledMenuItem">
-                    <a class="link__StyledMenuLink" [routerLink]="['/workspace']"
-                      title="Realiza una reserva">RESERVAS</a>
+                    <a class="link__StyledMenuLink" routerLink="/workspace" routerLinkActive="active"
+                      title=" Realiza una reserva">RESERVAS</a>
                   </li>
-                  <!-- <li class="item__StyledMenuItem">
-                    <a class="link__StyledMenuLink" [routerLink]="['/register']">REGISTRO</a>
-                  </li> -->
-                  <!-- <li class="item__StyledMenuItem">
-                    <a class="link__StyledMenuLink"</a>
-                  </li> -->
+
+                  <!-- BORRAR -->
+
                   <div class="logged">
                     <li class="item__StyledMenuItem">
-                      <a class="link__StyledMenuLink" [routerLink]="['/profile/:idprofile']"
-                        title="Accede a tu perfil">MI
-                        PERFIL</a>
+                      <a class="link__StyledMenuLink" routerLink='/profile/:idprofile' routerLinkActive="active"
+                        title="Accede a tu perfil">MI PERFIL</a>
                     </li>
                   </div>
+
+
+
                   <div *ngIf="isLogged" class="logged">
                     <li class="item__StyledMenuItem">
-                      <a class="link__StyledMenuLink" [routerLink]="['/profile/:idprofile']"
-                        title="Accede a tu perfil">MI
-                        PERFIL</a>
+                      <a class="link__StyledMenuLink" routerLink='/profile' routerLinkActive="active"
+                        title="Accede a tu perfil">MI PERFIL</a>
                     </li>
                   </div>
                   <li class="item__StyledMenuItem">
-                    <a class="link__StyledMenuLink " title="Login" [routerLink]="['/login']"><i
+                    <a class="link__StyledMenuLink " title="Login" routerLink='/login' routerLinkActive="active"><i
                         class="fa-solid fa-arrow-right-to-bracket"></i></a>
                   </li>
                 </ul>

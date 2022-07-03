@@ -16,12 +16,8 @@ export class SpaceComponent implements OnInit {
   reserve: Reserve[] = []
   reserveFiltered: Reserve[] = []
 
-  constructor(
-    private reservesService: ReservesService,
-    private router: Router,
-  ) {
-
-
+  constructor(private reservesService: ReservesService,
+    private router: Router,) {
 
     this.formReserve = new FormGroup({
       spaceId: new FormControl('', [
@@ -39,10 +35,9 @@ export class SpaceComponent implements OnInit {
     })
   }
 
-
   async ngOnInit(): Promise<void> {
-    this.reserve = await this.reservesService.getReservesByStatus(true)
-    this.reserveFiltered = [...this.reserve]
+    // this.reserve = await this.reservesService.getReservesByStatus(true)
+    // this.reserveFiltered = [...this.reserve]
   }
 
   onSubmit() {
@@ -55,6 +50,7 @@ export class SpaceComponent implements OnInit {
         alert('Reserva creada')
         this.formReserve.reset()
         this.reserveFiltered = await this.reservesService.getAllReserves()
+        this.router.navigate(['/calendar'])
         console.log(res)
       } else {
         alert('Error al crear la reserva')

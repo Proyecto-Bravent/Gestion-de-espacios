@@ -12,14 +12,15 @@ import { UsersService } from 'src/app/services/users.service';
 export class ProfileComponent implements OnInit {
 
   myProfile: User | any
-  payload: any
+  // payload: any
   // imgPath: string
 
   constructor(private usersService: UsersService, private actRoute: ActivatedRoute,
     public router: Router) {
 
-    // this.payload = jwtDecode(localStorage.getItem('token')!) as any;
     // this.imgPath = this.imgPath = 'http://localhost:3000/images/' + this.payload.user.image
+
+    // this.payload = jwtDecode(localStorage.getItem('token')!) as any;
   }
 
   ngOnInit(): void {

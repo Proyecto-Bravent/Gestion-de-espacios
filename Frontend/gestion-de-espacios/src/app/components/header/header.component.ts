@@ -16,12 +16,12 @@ export class HeaderComponent {
 
   }
 
-  // async ngOnInit() {
-  //   this.logged = await this.usersServices.myUser()
-  //   this.username = this.logged.username
-  // }
+  async ngOnInit() {
+    this.logged = await this.usersServices.myUser()
+    this.username = this.logged.username
+  }
 
-  // ngDoCheck(): void {
-  //   this.isLogged = (localStorage.getItem('token') !== null) ? true : false
-  // }
+  ngDoCheck(): void {
+    this.isLogged = (localStorage.getItem('token') !== null) ? true : false
+  }
 }
