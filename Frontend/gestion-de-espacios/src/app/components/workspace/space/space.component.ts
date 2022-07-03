@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import * as moment from 'moment';
 import { Router } from '@angular/router';
 import { Reserve } from 'src/app/interfaces/reserve';
 import { ReservesService } from 'src/app/services/reserves.service';
@@ -11,7 +12,7 @@ import { ReservesService } from 'src/app/services/reserves.service';
 })
 export class SpaceComponent implements OnInit {
 
-  formSpace: FormGroup
+  formReserve: FormGroup
   reserve: Reserve[] = []
   reserveFiltered: Reserve[] = []
 
@@ -22,20 +23,38 @@ export class SpaceComponent implements OnInit {
 
 
 
-    this.formSpace = new FormGroup({
+    this.formReserve = new FormGroup({
       spaceId: new FormControl('', [Validators.required, Validators.requiredTrue]),
       name: new FormControl('', [Validators.required]),
       date: new FormControl('', [Validators.required]),
+      description: new FormControl('', []),
     })
   }
 
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    this.reserve = await this.reservesService.getAllReserves()
+    this.reserveFiltered = [...this.reserve]
   }
 
-  getDataForm() {
-    console.log(this.formSpace.value)
-    this.reservesService.createReserve(this.formSpace.value)
-    this.router.navigate(['/home'])
+  onSubmit() {
+
+    // Cogemos la fecha del formulario
+
+    this.formReserve.value.date = moment(this.formReserve.value.date).format('YYYY-MM-DD HH:mm:ss')
+
+    // Creamos la reserva
+
+    this.reservesService.createReserve(this.formReserve.value).subscribe(async res => {
+
+      if (res.id_reserve) {
+        alert('Reserva creada')
+        this.formReserve.reset()
+        this.reserve = await this.reservesService.getAllReserves()
+        this.router.navigateByUrl('/space')
+      } else {
+        alert('Error al crear la reserva')
+      }
+    })
   }
 }

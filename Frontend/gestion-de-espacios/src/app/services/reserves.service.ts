@@ -34,6 +34,10 @@ export class ReservesService {
     return res
   }
 
+  filteredReserve(pDate: string): Promise<any[]> {
+    return lastValueFrom(this.httpClient.get<any[]>(this.baseUrl + '/resrerveday/' + pDate));
+  }
+
   // Actualiza reserva solo los autorizados
 
   updateReserve(pForm: any, pId: number): Observable<any> {

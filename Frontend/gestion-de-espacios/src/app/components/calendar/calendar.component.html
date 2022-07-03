@@ -33,7 +33,7 @@
             </div>
             <div class="cards__StyledReservesCards">
               <div class="app__StyledReserveApp">
-                <app-ui></app-ui>
+                <app-ui [reserves]="reserveFiltered" (SelectedDate)="onDateSelected(reserve)"></app-ui>
                 <p></p>
               </div>
             </div>

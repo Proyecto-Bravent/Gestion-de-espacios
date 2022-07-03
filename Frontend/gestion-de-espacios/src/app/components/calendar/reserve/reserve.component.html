@@ -3,19 +3,16 @@
     <div class="course">
       <div class="course-preview">
         <h6>Reserva Nº:</h6>
-        <h6>3</h6>
-        <h2>Jorge Pérez de Lanuza</h2>
+        <h6>{{ reserve.id_reserve }}</h6>
+        <h2>{{ reserve.name }}</h2>
         <h2>Bravent/Marketing</h2>
       </div>
       <div class="course-info">
         <div class="progress-container">
         </div>
-        <h3><span>Fecha:</span> La fecha de inicio fue el 24/03/2022</h3>
-        <h3><span>Sala:</span> La sala reservada fue 'Espacio Ares'</h3>
-        <h3><span>Duración:</span> La reserva tuvo una duración de 120 minutos</h3>
-        <h3><span>Notas:</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus unde, deserunt sed
-          dicta nobis voluptates modi quos natus quae expedita!
-        </h3>
+        <h3><span>Fecha:</span>{{ reserve.date | date: 'dd-MM-yyyy HH:mm'}}</h3>
+        <h3><span>Sala:</span>{{ reserve.spaceId }}</h3>
+        <h3><span>Notas:</span>{{ reserve.description }}</h3>
       </div>
     </div>
   </div>
