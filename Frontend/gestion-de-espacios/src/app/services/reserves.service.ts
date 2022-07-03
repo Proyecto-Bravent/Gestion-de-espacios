@@ -85,29 +85,6 @@ export class ReservesService {
     return lastValueFrom(this.httpClient.get<any[]>(`${this.baseUrl}/date/${pDate}`))
   }
 
-  // Coge reservas por fecha y espacio
-
-  getReservesByDateAndSpaceId(pDate: string, pSpaceId: number): Promise<any[]> {
-    return lastValueFrom(this.httpClient.get<any[]>(`${this.baseUrl}/date/${pDate}/space/${pSpaceId}`))
-  }
-
-  // Coge reservas por fecha y usuario
-
-  getReservesByDateAndUserId(pDate: string, pUserId: number): Promise<any[]> {
-    return lastValueFrom(this.httpClient.get<any[]>(`${this.baseUrl}/date/${pDate}/user/${pUserId}`))
-  }
-
-  // Coge reservas por fecha, espacio y usuario
-
-  getReservesByDateAndSpaceIdAndUserId(pDate: string, pSpaceId: number, pUserId: number): Promise<any[]> {
-    return lastValueFrom(this.httpClient.get<any[]>(`${this.baseUrl}/date/${pDate}/space/${pSpaceId}/user/${pUserId}`))
-  }
-
-  // Coge reservas por fecha, espacio, usuario y status
-
-  getReservesByDateAndSpaceIdAndUserIdAndStatus(pDate: string, pSpaceId: number, pUserId: number, pStatus: boolean): Promise<any[]> {
-    return lastValueFrom(this.httpClient.get<any[]>(`${this.baseUrl}/date/${pDate}/space/${pSpaceId}/user/${pUserId}/status/${pStatus}`))
-  }
 }
 
 

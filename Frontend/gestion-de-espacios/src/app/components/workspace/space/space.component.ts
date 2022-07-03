@@ -66,4 +66,8 @@ export class SpaceComponent implements OnInit {
     })
   }
 
+  async onSpaceSelected($event: any) {
+    this.reserveFiltered = await this.reservesService.getReservesByStatus($event)
+  }
+
 }

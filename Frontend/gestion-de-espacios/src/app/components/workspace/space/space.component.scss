@@ -19,14 +19,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .app__StyledCalendarApp {
   width: 50%;
   height: 10%;
 }
-
 
 .grid__StyledGridSpaces {
   width: 70%;
@@ -39,7 +37,6 @@
   text-align: center;
   font-family: var.$font-sans;
   padding-bottom: 30px;
-
 }
 
 .grid__StyledGridSpaces-2 {
@@ -68,7 +65,6 @@ span {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
 }
 
 .espacio-central-3 {
@@ -138,12 +134,11 @@ span {
 }
 
 .checkbox {
-  display: none;
+  // display: none;
 }
 
 .fa-handshake {
   font-size: 70px;
-
 
   &:checked {
     background-color: black;
@@ -154,7 +149,6 @@ span {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
 }
 
 .separador-sala-1 {
@@ -177,7 +171,6 @@ span {
   height: 150px;
   align-items: center;
   justify-items: center;
-
 }
 
 .espacio-central-2 {
@@ -189,7 +182,6 @@ span {
   height: 150px;
   align-items: center;
   justify-items: center;
-
 }
 
 .sala-de-reuniones {
@@ -258,8 +250,6 @@ span {
   justify-content: center;
 }
 
-
-
 .form {
   max-width: 100%;
   display: flex;
@@ -272,7 +262,6 @@ span {
   padding: 10px;
   margin-top: 30px;
   font-family: var.$font-sans;
-
 }
 
 .form>p>a {
@@ -309,8 +298,6 @@ option {
   font-family: var.$font-sans;
   font-size: 12px;
 }
-
-
 
 .resume-button {
   text-align: center;
