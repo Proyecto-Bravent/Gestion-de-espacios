@@ -125,17 +125,21 @@ span {
   height: 150px;
   align-items: center;
   justify-items: center;
-  margin-top: -7px;
 }
 
 .fa-solid {
   color: var.$green;
   font-size: 30px;
   cursor: pointer;
+
 }
 
 .checkbox {
   display: none;
+
+  &:checked .fa-solid {
+    color: var.$dark-blue;
+  }
 }
 
 .fa-handshake {
