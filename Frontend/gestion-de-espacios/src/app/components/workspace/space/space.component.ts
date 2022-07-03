@@ -57,4 +57,5 @@ export class SpaceComponent implements OnInit {
       }
     })
   }
+
 }

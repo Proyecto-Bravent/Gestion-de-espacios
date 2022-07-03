@@ -2,7 +2,7 @@
   <div class="main__StyledCalendarMain">
 
     <!-- Get date -->
-    <div>
+    <div class="date__StyledGettedDate">
       Fecha: {{ dateValue | date }}
     </div>
 
@@ -24,7 +24,7 @@
       <ol role="list" class="week__StyledWeekCalendar">
         <li *ngFor="let day of week" class="day-name">{{ day | slice: 0: 3 }}</li>
 
-        <li (click)="clickDay(day)" [style.gridColumnStart]="first ? day?.indexWeek : 'auto'"
+        <li class="calendar_day" (click)="clickDay(day)" [style.gridColumnStart]="first ? day?.indexWeek : 'auto'"
           *ngFor="let day of monthSelect; let first = first" [ngClass]="{ daySelected : day.haveReserve }">
           <span>{{ day?.value }}</span>
         </li>

@@ -35,7 +35,7 @@ export class ReservesService {
   }
 
   filteredReserve(pDate: string): Promise<any[]> {
-    return lastValueFrom(this.httpClient.get<any[]>(this.baseUrl + '/resrerveday/' + pDate));
+    return lastValueFrom(this.httpClient.get<any[]>(this.baseUrl + '/reserveday/' + pDate));
   }
 
   // Actualiza reserva solo los autorizados

@@ -20,13 +20,8 @@ export class CalendarComponent implements OnInit {
 
 
   async ngOnInit(): Promise<void> {
-
     this.reserve = await this.reservesService.getAllReserves()
     this.reserveFiltered = this.reserve
-
-
-
-
   }
 
   async onDateSelected($event: any) {
