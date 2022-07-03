@@ -23,9 +23,6 @@ export class SpaceComponent implements OnInit {
       spaceId: new FormControl('', [
         Validators.required, Validators.requiredTrue
       ]),
-      name: new FormControl('', [
-        Validators.required
-      ]),
       date: new FormControl('', [
         Validators.required
       ]),

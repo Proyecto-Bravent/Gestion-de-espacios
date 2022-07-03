@@ -165,12 +165,14 @@
               <h4 class="animation a2">*Completa los campos para formalizar la reserva.</h4>
             </div>
             <div class="form">
-              <select name="daySelect" class="form-field animation a3" formControlName="date">
+              <input type="datetime-local" name="daySelect" class="form-field animation a3" formControlName="date">
+              <!-- <input type="date" name="daySelect" class="form-field animation a3" formControlName="date"> -->
+
+              <!-- <select name="daySelect" class="form-field animation a3" formControlName="date">
                 <option value="" selected disabled>Quiero reservar para dentro de:</option>
                 <option value="2">24 horas</option>
                 <option value="3">48 horas</option>
-              </select>
-              <input type="date" name="daySelect" class="form-field animation a3" formControlName="date">
+              </select> -->
               <input maxlength="150" type="text" class="form-field animation a3"
                 placeholder="*Descripción de la reserva (max.150)" formControlName="description">
               <input type="submit" class="resume-button" value="ACEPTAR">

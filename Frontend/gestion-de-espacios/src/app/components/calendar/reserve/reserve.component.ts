@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Reserve } from 'src/app/interfaces/reserve';
-import { ReservesService } from 'src/app/services/reserves.service';
+import { User } from 'src/app/interfaces/user';
 
 @Component({
   selector: 'app-reserve',
@@ -10,10 +10,11 @@ import { ReservesService } from 'src/app/services/reserves.service';
 export class ReserveComponent implements OnInit {
 
   @Input() reserve: Reserve | any
+  @Input() user: User | any
 
 
 
-  constructor(private reservesService: ReservesService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
