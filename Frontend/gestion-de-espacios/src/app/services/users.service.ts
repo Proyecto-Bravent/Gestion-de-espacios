@@ -29,20 +29,8 @@ export class UsersService {
 
   // Register
 
-  // register(pForm: any): Promise<any> {
-  //   return lastValueFrom(this.httpClient.post<any>(this.baseUrl + 'register', pForm))
-  // }
-
-  // Register
-
-
-
-  registerBravent(pForm: any): Promise<any> {
-    return lastValueFrom(this.httpClient.post<any>(this.baseUrl + 'registerbravent', pForm))
-  }
-
-  registerBitWork(pForm: any): Promise<any> {
-    return lastValueFrom(this.httpClient.post<any>(this.baseUrl + 'registerbitwork', pForm))
+  register(pForm: any): Promise<any> {
+    return lastValueFrom(this.httpClient.post<any>(this.baseUrl + 'register', pForm))
   }
 
   // Mi usuario solo autorizados

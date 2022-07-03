@@ -5,7 +5,7 @@
         <h2 class="animation a1">¡Bienvenido/a!</h2>
         <h4 class="animation a2">Completa los campos para formalizar el registro.</h4>
       </div>
-      <form [formGroup]="FormRegister" (ngSubmit)="getDataForm()">
+      <form [formGroup]="formRegister" (ngSubmit)="getDataForm()">
         <div class="form">
           <input type="text" class="form-field animation a3" placeholder="Nombre y apellidos*"
             formControlName="username">

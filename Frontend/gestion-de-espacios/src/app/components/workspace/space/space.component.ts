@@ -47,27 +47,23 @@ export class SpaceComponent implements OnInit {
 
   onSubmit() {
 
-    // Cogemos la fecha del formulario
-
     this.formReserve.value.date = moment(this.formReserve.value.date).format('YYYY-MM-DD HH:mm')
-
-    // Creamos la reserva
 
     this.reservesService.createReserve(this.formReserve.value).subscribe(async res => {
 
       if (res.id_reserve) {
         alert('Reserva creada')
         this.formReserve.reset()
-        this.reserve = await this.reservesService.getReservesByStatus(true)
-        this.router.navigateByUrl('/calendar')
+        this.reserveFiltered = await this.reservesService.getAllReserves()
+        console.log(res)
       } else {
         alert('Error al crear la reserva')
       }
     })
   }
 
-  async onSpaceSelected($event: any) {
-    this.reserveFiltered = await this.reservesService.getReservesByStatus($event)
+  async onSpaceSelected($reserve: any) {
+    this.reserveFiltered = await this.reservesService.getReservesByStatus($reserve)
   }
 
 }

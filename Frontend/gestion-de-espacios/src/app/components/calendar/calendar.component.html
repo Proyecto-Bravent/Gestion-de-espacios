@@ -15,11 +15,9 @@
 
                 <div class="courses-container">
                   <div class="course">
-                    <app-reserve></app-reserve>
-                    <app-reserve></app-reserve>
-                    <app-reserve></app-reserve>
-                    <app-reserve></app-reserve>
-
+                    <article *ngFor="let reserve of reserveFiltered">
+                      <app-reserve [reserve] (refreshReserves)="actReserves()"></app-reserve>
+                    </article>
                   </div>
                 </div>
               </div>

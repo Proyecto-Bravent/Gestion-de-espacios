@@ -30,7 +30,7 @@ export class ReservesService {
   // Crea reserva
 
   createReserve(pForm: any): Observable<any> {
-    const res = this.httpClient.post<any>(this.baseUrl, pForm)
+    const res = this.httpClient.post<any>(this.baseUrl, 'space', pForm)
     return res
   }
 

@@ -3,6 +3,7 @@ import { Router } from '@angular/router'
 import { Reserve } from 'src/app/interfaces/reserve'
 import { ReservesService } from 'src/app/services/reserves.service'
 
+
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
@@ -24,8 +25,8 @@ export class CalendarComponent implements OnInit {
     this.reserveFiltered = [...this.reserve]
   }
 
-  async onDateSelected($event: any) {
-    this.reserveFiltered = await this.reservesService.filteredReserve($event)
+  async onDateSelected($reserve: any) {
+    this.reserveFiltered = await this.reservesService.filteredReserve($reserve)
   }
 
   async actReserves() {

@@ -16,13 +16,13 @@ export class UiComponent implements OnInit {
   @Output() SelectedDate: EventEmitter<string>
 
   week: any = [
-    "Lunes",
-    "Martes",
-    "Miercoles",
-    "Jueves",
-    "Viernes",
-    "Sabado",
-    "Domingo"
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
   ]
 
   // Variables de seleccion de fecha
