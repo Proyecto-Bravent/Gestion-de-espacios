@@ -1,5 +1,5 @@
 export interface Reserve {
-  id_reserve: number
+  id: string
   spaceId: number
   name: string
   userId: number

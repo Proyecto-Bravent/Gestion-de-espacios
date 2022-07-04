@@ -45,13 +45,22 @@ export class EditProfileComponent implements OnInit {
     formData.append('surname', this.updateUserForm.value.surname)
     formData.append('username', this.updateUserForm.value.username)
     formData.append('email', this.updateUserForm.value.email)
-    formData.append('avatar', this.myUser.avatar, this.avatar[0])
+
     if (this.avatar === null) {
-      const res = await this.userService.editUser(formData, this.updateUserForm.value.id)
+
+      formData.append('avatar', this.myUser.avatar, this.avatar[0])
+
+      const response = await this.userService.editUser(formData, this.updateUserForm.value.id)
+
       this.updateUser.emit(true)
+
       alert('El usuario ha sido actualizado')
-    } else {
-      alert('Los cambios no han sido guardados')
+
+      if (response[0].affectedRows) {
+        alert('Data updated correctly')
+      } else {
+        alert('Changes could not be saved')
+      }
     }
   }
 
@@ -60,7 +69,7 @@ export class EditProfileComponent implements OnInit {
   }
 
   async deleteUser(pId: number) {
-    const alert = confirm('¿Estas seguro de eliminar tu perfil?')
+    const alert = confirm('¿Estas seguro que quieres eliminar tu perfil?')
     if (alert) {
       const response = await this.userService.deleteUser(pId);
       this.router.navigate(['/home']);
