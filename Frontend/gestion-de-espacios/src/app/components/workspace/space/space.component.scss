@@ -97,25 +97,28 @@ span {
   justify-items: center;
 }
 
-.fa-solid {
+.fa-computer {
   color: var.$green;
   font-size: 30px;
 }
 
-input:checked+label .fa-solid {
+.fa-handshake {
+  color: var.$green;
+  font-size: 70px;
+}
+
+input:checked+label .fa-computer {
+  font-size: 40px;
+  color: var.$dark-blue;
+}
+
+input:checked+label .fa-handshake {
+  font-size: 90px;
   color: var.$dark-blue;
 }
 
 .checkbox {
   display: none;
-}
-
-.fa-handshake {
-  font-size: 70px;
-
-  &:checked {
-    background-color: black;
-  }
 }
 
 .separador-salareuniones {
