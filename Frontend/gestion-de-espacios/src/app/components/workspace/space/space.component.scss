@@ -106,15 +106,8 @@ input:checked+label .fa-solid {
   color: var.$dark-blue;
 }
 
-
 .checkbox {
   display: none;
-
-  &:checked,
-  &:active,
-  &:focus .fa-solid {
-    color: var.$dark-blue;
-  }
 }
 
 .fa-handshake {
