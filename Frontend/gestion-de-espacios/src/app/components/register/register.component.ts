@@ -38,12 +38,10 @@ export class RegisterComponent implements OnInit {
   async getDataForm() {
     try {
       const response = await this.usersService.register(this.formRegister.value)
-      alert(response.success)
       this.router.navigate(['/login'])
     } catch (err) {
       console.log(err)
     }
-
   }
 }
 

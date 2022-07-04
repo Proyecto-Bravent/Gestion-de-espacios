@@ -20,6 +20,10 @@ export class SpaceComponent implements OnInit {
     private router: Router,) {
 
     this.formReserve = new FormGroup({
+
+      email: new FormControl('',
+        [Validators.required
+        ]),
       spaceId: new FormControl('', [
         Validators.required, Validators.requiredTrue
       ]),

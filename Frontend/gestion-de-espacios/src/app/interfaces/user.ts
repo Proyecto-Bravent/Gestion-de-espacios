@@ -4,6 +4,8 @@ export interface User {
   email: string,
   password: string,
   repeatPass: string,
+  company: string,
+  img_avatar: string,
   role: string,
   token: string,
 }

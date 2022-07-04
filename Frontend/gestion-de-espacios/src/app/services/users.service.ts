@@ -1,13 +1,15 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { lastValueFrom, Observable } from 'rxjs';
+import { user } from '@angular/fire/auth';
+import { lastValueFrom, map, Observable } from 'rxjs';
+import { User } from '../interfaces/user';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class UsersService {
-
+  user: User | any
   baseUrl: string
 
   constructor(private httpClient: HttpClient) {
@@ -49,6 +51,14 @@ export class UsersService {
 
   getById(pId: number): Promise<any> {
     return lastValueFrom(this.httpClient.get<any>(this.baseUrl + "profile/" + pId))
+  }
+
+  // Encontrar usuarios por id 
+
+  findOne(id: number): Observable<User> {
+    return this.httpClient.get<User>(this.baseUrl + 'profile/' + id).pipe(
+      map((user: User) => user)
+    )
   }
 
   // Traigo todos los usuarios

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import jwtDecode from 'jwt-decode';
+import jwt_decode from 'jwt-decode';
+import { map } from 'rxjs/operators';
 import { User } from 'src/app/interfaces/user';
 import { UsersService } from 'src/app/services/users.service';
 
@@ -11,29 +12,25 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class ProfileComponent implements OnInit {
 
-  myProfile: User | any
-  // payload: any
-  // imgPath: string
+  id: number | null = null
+  user: User | any
+  imgPath: string
 
-  constructor(private usersService: UsersService, private actRoute: ActivatedRoute,
-    public router: Router) {
 
-    // this.imgPath = this.imgPath = 'http://localhost:3000/images/' + this.payload.user.image
 
-    // this.payload = jwtDecode(localStorage.getItem('token')!) as any;
+  constructor(private usersService: UsersService, private actRoute: ActivatedRoute, public router: Router) {
+
+    this.imgPath = 'https://localhost:7188/api/images/'
+
   }
 
   ngOnInit(): void {
+    this.actRoute.params.subscribe(params => {
+      this.id = parseInt(params['idprofile'])
+      this.usersService.findOne(this.id).pipe(
+        map((user: User) => this.user = user)
+      )
 
-    this.actRoute.params.subscribe(async params => {
-      const id = parseInt(params['/idprofile'])
-
-      if (params['/idprofile']) {
-        this.myProfile = await this.usersService.getById(id)
-
-      } else {
-        this.myProfile = await this.usersService.myUser()
-      }
     })
   }
   logout() {

@@ -100,11 +100,13 @@ span {
 .fa-computer {
   color: var.$green;
   font-size: 30px;
+  cursor: pointer;
 }
 
 .fa-handshake {
   color: var.$green;
   font-size: 70px;
+  cursor: pointer;
 }
 
 input:checked+label .fa-computer {
