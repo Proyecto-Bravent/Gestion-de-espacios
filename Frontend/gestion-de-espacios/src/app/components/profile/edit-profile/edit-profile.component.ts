@@ -45,8 +45,8 @@ export class EditProfileComponent implements OnInit {
     formData.append('surname', this.updateUserForm.value.surname)
     formData.append('username', this.updateUserForm.value.username)
     formData.append('email', this.updateUserForm.value.email)
+    formData.append('avatar', this.myUser.avatar, this.avatar[0])
     if (this.avatar === null) {
-      formData.append('avatar', this.myUser.avatar, this.avatar[0])
       const res = await this.userService.editUser(formData, this.updateUserForm.value.id)
       this.updateUser.emit(true)
       alert('El usuario ha sido actualizado')
