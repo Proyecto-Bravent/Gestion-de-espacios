@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import jwt_decode from 'jwt-decode';
 import { map } from 'rxjs/operators';
 import { User } from 'src/app/interfaces/user';
 import { UsersService } from 'src/app/services/users.service';
@@ -29,6 +28,18 @@ export class ProfileComponent implements OnInit {
       this.usersService.findOne(this.id).pipe(map((user: User) => this.user = user))
     })
   }
+
+  updateUser() {
+    this.actRoute.params.subscribe(async params => {
+      let userId = parseInt(params['idprofile'])
+      if (params['idprofile']) {
+        this.user = await this.usersService.getById(userId)
+      } else {
+        this.user = await this.usersService.myUser()
+      }
+    })
+  }
+
   logout() {
     localStorage.removeItem('token')
     this.router.navigateByUrl('/home')

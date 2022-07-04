@@ -29,6 +29,7 @@ import { UiComponent } from './components/calendar/ui/ui.component';
 import { ReserveComponent } from './components/calendar/reserve/reserve.component';
 import { SpaceComponent } from './components/workspace/space/space.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { EditProfileComponent } from './components/profile/edit-profile/edit-profile.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     AdminDirective,
     SpaceComponent,
     NotFoundComponent,
+    EditProfileComponent,
   ],
   imports: [
     BrowserModule,

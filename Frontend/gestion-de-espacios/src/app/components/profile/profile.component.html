@@ -21,13 +21,21 @@
                 <div class="course-info">
                   <div class="progress-container">
                   </div>
-                  <h2><span>Nombre:</span>{{ user.name }}</h2>
-                  <h2><span>Compañía:</span>{{ user.company }}</h2>
+                  <h2><span>Nombre:</span>Jorge{{ user.name }}</h2>
+                  <h2><span>Compañía:</span> Bravent/Marketing</h2>
                   <h2><span>Cambiar contraseña:</span></h2>
+
+                  <!-- Editar contraseña -->
+
                   <button class="pass-btn" title="Elige una nueva contraseña" type="button" data-bs-toggle="modal"
                     data-bs-target="#editPassword"><i class="fa-solid fa-key password"></i></button>
                   <app-password [myProfile]="user"></app-password>
-                  <input class="img-root" id="image" type="file" value="Cambiar foto de perfil">
+
+                  <!-- Editar usuario -->
+
+                  <button type="button" class="profile___btn btn my-2" data-bs-toggle="modal"
+                    data-bs-target="#editProfile"><i class="fa-solid fa-user-pen"></i></button>
+                  <app-edit-profile></app-edit-profile>
                 </div>
               </div>
             </div>
