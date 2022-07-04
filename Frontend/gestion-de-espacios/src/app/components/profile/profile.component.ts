@@ -27,10 +27,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     this.actRoute.params.subscribe(params => {
       this.id = parseInt(params['idprofile'])
-      this.usersService.findOne(this.id).pipe(
-        map((user: User) => this.user = user)
-      )
-
+      this.usersService.findOne(this.id).pipe(map((user: User) => this.user = user))
     })
   }
   logout() {
