@@ -49,17 +49,12 @@ export class EditProfileComponent implements OnInit {
     if (this.avatar === null) {
 
       formData.append('avatar', this.myUser.avatar, this.avatar[0])
-
       const response = await this.userService.editUser(formData, this.updateUserForm.value.id)
-
       this.updateUser.emit(true)
-
-      alert('El usuario ha sido actualizado')
-
       if (response[0].affectedRows) {
-        alert('Data updated correctly')
+        alert('El usuario ha sido actualizado')
       } else {
-        alert('Changes could not be saved')
+        alert('El usuario no ha sido actualizado')
       }
     }
   }
