@@ -21,7 +21,6 @@ export class ProfileComponent implements OnInit {
   constructor(private usersService: UsersService, private actRoute: ActivatedRoute, public router: Router) {
 
     this.imgPath = 'https://localhost:7188/api/images/'
-
   }
 
   ngOnInit(): void {
