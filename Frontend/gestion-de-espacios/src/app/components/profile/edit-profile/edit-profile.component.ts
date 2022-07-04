@@ -63,7 +63,7 @@ export class EditProfileComponent implements OnInit {
     const alert = confirm('¿Estas seguro de eliminar tu perfil?')
     if (alert) {
       const response = await this.userService.deleteUser(pId);
-      this.router.navigate(['/members']);
+      this.router.navigate(['/home']);
       this.updateUser.emit(true);
     }
   }
