@@ -64,28 +64,8 @@ span {
   padding-top: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-}
+  justify-content: space-evenly;
 
-.espacio-central-3 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  width: 150px;
-  height: 150px;
-  align-items: center;
-  justify-items: center;
-}
-
-.interior-espacio-central-3 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  width: 150px;
-  height: 150px;
-  align-items: center;
-  justify-items: center;
-  gap: 30px;
 }
 
 .espacio-3 {
@@ -117,27 +97,22 @@ span {
   justify-items: center;
 }
 
-.separador-sala-2 {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  gap: 30px;
-  width: 150px;
-  height: 150px;
-  align-items: center;
-  justify-items: center;
-}
-
 .fa-solid {
   color: var.$green;
   font-size: 30px;
-  cursor: pointer;
-
 }
+
+input:checked+label .fa-solid {
+  color: var.$dark-blue;
+}
+
 
 .checkbox {
   display: none;
 
-  &:checked .fa-solid {
+  &:checked,
+  &:active,
+  &:focus .fa-solid {
     color: var.$dark-blue;
   }
 }
@@ -154,11 +129,22 @@ span {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  justify-items: center;
 }
 
 .separador-sala-1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 30px;
+  width: 150px;
+  height: 150px;
+  align-items: center;
+  justify-items: center;
+}
+
+.separador-sala-2 {
+  display: grid;
   grid-template-rows: 1fr 1fr;
   gap: 30px;
   width: 150px;
@@ -189,6 +175,28 @@ span {
   justify-items: center;
 }
 
+.espacio-central-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 150px;
+  height: 150px;
+  align-items: center;
+  justify-items: center;
+}
+
+.interior-espacio-central-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 150px;
+  height: 150px;
+  align-items: center;
+  justify-items: center;
+  gap: 30px;
+
+}
+
 .sala-de-reuniones {
   width: 150px;
   height: 150px;
@@ -205,11 +213,11 @@ span {
   align-items: center;
   padding-bottom: 30px;
   border-left: 1px solid rgba(0, 0, 0, 0.103);
-  // animation-name: move;
-  // animation-duration: .4s;
-  // animation-fill-mode: both;
-  // animation-delay: .6s;
-  // transition: .3s;
+  animation-name: move;
+  animation-duration: .4s;
+  animation-fill-mode: both;
+  animation-delay: .6s;
+  transition: .3s;
 }
 
 .header-top {
@@ -349,57 +357,57 @@ button {
   }
 }
 
-// .animation {
-//   animation-name: move;
-//   animation-duration: .4s;
-//   animation-fill-mode: both;
-//   animation-delay: 1s;
-// }
+.animation {
+  animation-name: move;
+  animation-duration: .4s;
+  animation-fill-mode: both;
+  animation-delay: 1s;
+}
 
 
-// .a1 {
-//   animation-delay: 1s;
-// }
+.a1 {
+  animation-delay: 1s;
+}
 
-// .a2 {
-//   animation-delay: 1.3s;
-// }
+.a2 {
+  animation-delay: 1.3s;
+}
 
-// .a3 {
-//   animation-delay: 1.4s;
-// }
+.a3 {
+  animation-delay: 1.4s;
+}
 
-// .a4 {
-//   animation-delay: 1.5s;
-// }
+.a4 {
+  animation-delay: 1.5s;
+}
 
-// .a5 {
-//   animation-delay: 1.6s;
-// }
+.a5 {
+  animation-delay: 1.6s;
+}
 
-// @keyframes move {
-//   0% {
-//     opacity: 0;
-//     visibility: hidden;
-//     transform: translateY(-40px);
-//   }
+@keyframes move {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-40px);
+  }
 
-//   100% {
-//     opacity: 1;
-//     visibility: visible;
-//     transform: translateY(0);
-//   }
-// }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
 
-// @keyframes left {
-//   0% {
-//     opacity: 0;
-//     width: 0;
-//   }
+@keyframes left {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
 
-//   100% {
-//     opacity: 1;
-//     // padding: 20px 40px;
-//     width: 0px;
-//   }
-// }
+  100% {
+    opacity: 1;
+    // padding: 20px 40px;
+    width: 0px;
+  }
+}

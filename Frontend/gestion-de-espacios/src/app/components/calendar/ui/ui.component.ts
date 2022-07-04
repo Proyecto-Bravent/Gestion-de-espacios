@@ -7,6 +7,7 @@ import { Reserve } from 'src/app/interfaces/reserve'
   templateUrl: './ui.component.html',
   styleUrls: ['./ui.component.scss']
 })
+
 export class UiComponent implements OnInit {
 
   @Input() reserves: Reserve[] = []
@@ -24,8 +25,6 @@ export class UiComponent implements OnInit {
     "Saturday",
     "Sunday"
   ]
-
-  // Variables de seleccion de fecha
 
   monthSelect: any[] = []
   dateSelect: any

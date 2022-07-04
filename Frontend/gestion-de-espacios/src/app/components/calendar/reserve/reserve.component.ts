@@ -12,8 +12,6 @@ export class ReserveComponent implements OnInit {
   @Input() reserve: Reserve | any
   @Input() user: User | any
 
-
-
   constructor() { }
 
   ngOnInit(): void {
