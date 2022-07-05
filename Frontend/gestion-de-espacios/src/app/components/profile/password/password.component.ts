@@ -84,7 +84,7 @@ export class PasswordComponent implements OnInit {
           }
         })
       } else {
-        const id = this.myProfile.id_user;
+        const id = this.myProfile.id;
         this.userServices.resetPassword(this.editPassword.value, id).subscribe(response => {
 
           if (response[0].changedRows) {
