@@ -14,7 +14,7 @@ export class UsersService {
 
   constructor(private httpClient: HttpClient) {
 
-    this.baseUrl = 'https://localhost:7188/api/Authenticate'
+    this.baseUrl = 'https://localhost:7023/api/Authenticate/'
   }
 
   // Loggin del usuario
@@ -22,7 +22,8 @@ export class UsersService {
   login(pForm: any): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': localStorage.getItem('token')!
       })
     }
     const res = this.httpClient.post<any>(this.baseUrl + 'login', pForm, httpOptions)

@@ -15,6 +15,7 @@
           <input type="password" class="form-field animation a3" placeholder="Contraseña*" formControlName="password">
           <input type="password" class="form-field animation a3" placeholder="Confirma tu contraseña*"
             formControlName="repeatPassword">
+          <input type="file">
           <p>Selecciona tu compañía/departamento:</p>
           <div class="labels">
             <div>
@@ -32,7 +33,11 @@
                 class="form-field animation a4 checkbox">
               <label for="checkbox-3">Bitwork</label>
             </div>
+            <div>
+              <input type="text" formControlName="avatar" value="" class="form-field animation a4 checkbox">
+            </div>
           </div>
+
           <input type="submit" class="resume-button" value="ACEPTAR">
         </div>
       </form>

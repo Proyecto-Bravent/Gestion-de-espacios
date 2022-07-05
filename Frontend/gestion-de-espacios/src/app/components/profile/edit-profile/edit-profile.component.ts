@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/interfaces/user';
 import { UsersService } from 'src/app/services/users.service';
@@ -23,7 +23,7 @@ export class EditProfileComponent implements OnInit {
       name: new FormControl('', []),
       surname: new FormControl('', []),
       username: new FormControl('', []),
-      email: new FormControl('', []),
+      email: new FormControl('', [Validators.email]),
     }, [])
 
   }
@@ -36,7 +36,7 @@ export class EditProfileComponent implements OnInit {
       name: new FormControl('updateProfile?.name', []),
       surname: new FormControl('updateProfile?.surname', []),
       username: new FormControl('updateProfile?.username', []),
-      email: new FormControl('updateProfile?.email', []),
+      email: new FormControl('updateProfile?.email', [Validators.email]),
     })
   }
   async editUser() {
@@ -57,7 +57,6 @@ export class EditProfileComponent implements OnInit {
         alert('El usuario no ha sido actualizado')
       }
     }
-
   }
 
   onChange($event: any) {
@@ -80,5 +79,4 @@ export class EditProfileComponent implements OnInit {
       return false
     }
   }
-
 }
