@@ -73,6 +73,11 @@
   padding-left: 10px;
 }
 
+label {
+  cursor: pointer;
+
+}
+
 .form-field {
   padding: 10px;
   border: none;
@@ -84,8 +89,8 @@
 
 .radio {
   color: var.$dark-blue;
-  cursor: pointer;
   font-size: var.$fz-md;
+  cursor: pointer;
 }
 
 .form-field:focus {
@@ -93,7 +98,7 @@
 }
 
 input:checked+label {
-  transition: .6s;
+  transition: .3s ease;
   font-size: var.$fz-xl;
   color: var.$green;
 }
