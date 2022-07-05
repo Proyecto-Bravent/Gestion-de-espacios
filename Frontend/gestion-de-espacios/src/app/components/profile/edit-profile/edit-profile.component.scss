@@ -35,15 +35,19 @@ label {
   color: white;
   font-family: var.$font-sans;
   padding: 10px;
+
+  &:hover {
+    color: var.$green;
+  }
 }
 
-
 .editMember___btn {
-  padding: 7px 12px;
+  padding: 0.45rem 2rem;
   background: var.$green;
   border: 1px solid var.$green;
   color: white;
   border-radius: 50px;
+  border: none;
   font-size: var.$fz-xl;
   text-decoration: none;
   font-weight: 500;
@@ -61,12 +65,15 @@ label {
 
 .modal-footer {
   border: none;
-
 }
 
 .delete {
-  color: red;
+  color: rgba(255, 0, 0, 0.233);
   font-size: var.$fz-xl;
   cursor: pointer;
   text-decoration: none;
+
+  &:hover {
+    color: red;
+  }
 }

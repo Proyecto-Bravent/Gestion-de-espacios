@@ -21,7 +21,8 @@ export class PasswordComponent implements OnInit {
 
       password: new FormControl('', [
         Validators.required,
-        Validators.pattern('^(?=[A-Z0-9]*[a-z])(?=[a-zA-Z]*[0-9])(?=[a-z0-9]*[A-Z])[a-zA-Z0-9]{8,}$')
+        Validators.minLength(8),
+        Validators.maxLength(20)
       ]),
       repeatPass: new FormControl('', [
         Validators.required
@@ -30,20 +31,15 @@ export class PasswordComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-
   }
 
   samePass(form: AbstractControl) {
-
     const passValue = form.get('password')?.value;
     const samePassValue = form.get('repeatPass')?.value
 
     if (passValue === samePassValue) {
       return null
-
     } else {
-
       return { samePass: true }
     }
   }
@@ -52,12 +48,9 @@ export class PasswordComponent implements OnInit {
   // Required validator for password field in the form group editPassword
 
   checkControl(controlName: string, errorName: string) {
-
     if (this.editPassword.get(controlName)?.hasError(errorName) && this.editPassword.get(controlName)?.touched) {
       return true
-
     } else {
-
       return false
     }
   }
@@ -68,13 +61,10 @@ export class PasswordComponent implements OnInit {
 
     if (this.editPassword.get(resetPass)?.touched) {
       return true
-
     } else {
-
       return false
     }
   }
-
 
   // Edit password of the user logged in the system 
 
@@ -85,26 +75,20 @@ export class PasswordComponent implements OnInit {
 
         const id = parseInt(params['idprofile']);
         this.userServices.resetPassword(this.editPassword.value, id).subscribe(response => {
+          console.log(response);
           if (response[0].changedRows) {
-
             alert('Tu contraseña ha sido actualizada correctamente')
-
           } else {
-
             alert('La contraseña no ha podido ser actualizada')
           }
-
-        });
+        })
       } else {
-
         const id = this.myProfile.id_user;
         this.userServices.resetPassword(this.editPassword.value, id).subscribe(response => {
 
           if (response[0].changedRows) {
             alert('Tu contraseña ha sido actualizada correctamente')
-
           } else {
-
             alert('La contraseña no ha podido ser actualizada')
           }
         })

@@ -45,10 +45,10 @@ export class EditProfileComponent implements OnInit {
     formData.append('surname', this.updateUserForm.value.surname)
     formData.append('username', this.updateUserForm.value.username)
     formData.append('email', this.updateUserForm.value.email)
+    formData.append('avatar', this.myUser.avatar, this.avatar[0])
 
     if (this.avatar === null) {
 
-      formData.append('avatar', this.myUser.avatar, this.avatar[0])
       const response = await this.userService.editUser(formData, this.updateUserForm.value.id)
       this.updateUser.emit(true)
       if (response[0].affectedRows) {
@@ -57,6 +57,7 @@ export class EditProfileComponent implements OnInit {
         alert('El usuario no ha sido actualizado')
       }
     }
+
   }
 
   onChange($event: any) {
