@@ -23,7 +23,8 @@ export class RegisterComponent implements OnInit {
     this.formRegister = new FormGroup({
 
       // Password validators are --> ^ - Comienzo del string, (?=[A-Z0-9]*[a-z]) miramos para asegurar al menos un carácter en minúsculas, (?=[a-zA-Z]*[0-9]) nos aseguramos al menos un número , (?=[a-z0-9]*[A-Z]) pedimos al menos una mayúscula, [a-zA-Z0-9]{8,} pedimos ocho o más caracteres, $ fin del string.
-
+      name: new FormControl('', [Validators.required]),
+      surname: new FormControl('', [Validators.required]),
       username: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required, Validators.required, Validators.minLength(8), Validators.maxLength(20)]),

@@ -48,6 +48,7 @@ export class PasswordComponent implements OnInit {
   // Required validator for password field in the form group editPassword
 
   checkControl(controlName: string, errorName: string) {
+
     if (this.editPassword.get(controlName)?.hasError(errorName) && this.editPassword.get(controlName)?.touched) {
       return true
     } else {

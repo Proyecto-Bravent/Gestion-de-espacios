@@ -1,15 +1,10 @@
 @use 'var.scss';
 
-@font-face {
-  font-family: 'Gelion';
-  src: url('../../../assets/fonts/Gelion/Gelion-Regular.ttf');
-}
-
 .container {
   display: flex;
   height: 87.3vh;
   width: 100%;
-  font-family: 'Gelion';
+  font-family: var.$font-sans;
 }
 
 .right {
@@ -28,7 +23,7 @@
 }
 
 .header>h2 {
-  padding-top: 50px;
+  padding-top: 30px;
   text-align: center;
   color: var.$green;
   font-weight: 600;
@@ -43,9 +38,9 @@
 }
 
 ::placeholder {
-  color: rgba(5, 5, 5, 0.438);
+  color: rgba(5, 5, 5, 0.603);
   font-size: var.$fz-xxs;
-  font-family: 'Gelion';
+  font-family: var.$font-sans;
 }
 
 .form {
@@ -64,7 +59,7 @@
 .form>p>a {
   color: rgb(0, 0, 7);
   font-size: 14px;
-  font-family: 'Gelion';
+  font-family: var.$font-sans;
 
   &:hover {
     color: var.$green
@@ -75,20 +70,36 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  padding-left: 10px;
 }
 
 .form-field {
-  padding: 20px 30px 5px 20px;
+  padding: 10px;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.411);
-  font-family: 'Rubik', sans-serif;
+  font-family: var.$font-sans;
   outline: 0;
-  transition: .2s;
-  margin-top: 20px;
+  margin-top: 10px;
+}
+
+.radio {
+  color: var.$dark-blue;
+  cursor: pointer;
+  font-size: var.$fz-md;
 }
 
 .form-field:focus {
   border-color: #f6f9fc;
+}
+
+input:checked+label {
+  transition: .6s;
+  font-size: var.$fz-xl;
+  color: var.$green;
+}
+
+.checkbox {
+  display: none;
 }
 
 .resume-button {
