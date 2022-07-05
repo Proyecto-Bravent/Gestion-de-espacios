@@ -14,16 +14,16 @@
               <div class="course">
                 <div class="course-preview">
                   <div class="img">
-                    <img class="profile-img" [src]="'../../../assets/images/default-avatar.png'">
-                    <!-- user.img_avatar ? imgPath + user.img_avatar : -->
+                    <img class="profile-img"
+                      [src]="user.avatar ? imgPath + user.avatar :'../../../assets/images/default-avatar.png'">
                   </div>
                 </div>
                 <div class="course-info">
                   <div class="progress-container">
                   </div>
-                  <h2><span>Nombre:</span> Jorge Perez</h2>
-                  <h2><span>Usuario:</span> jorge.perez</h2>
-                  <h2><span>Compañía:</span> Bravent/Marketing</h2>
+                  <h2><span>Nombre:</span> {{ user.name }} {{ user.surname }}</h2>
+                  <h2><span>Usuario:</span> {{ user.username }}</h2>
+                  <h2><span>Compañía:</span> {{ user.company }}</h2>
 
                   <!-- Editar contraseña -->
 

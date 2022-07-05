@@ -36,6 +36,8 @@ export class SpaceComponent implements OnInit {
     })
   }
 
+  // Crear validador para el campo date
+
   async ngOnInit(): Promise<void> {
     // this.reserve = await this.reservesService.getReservesByStatus(true)
     // this.reserveFiltered = [...this.reserve]
