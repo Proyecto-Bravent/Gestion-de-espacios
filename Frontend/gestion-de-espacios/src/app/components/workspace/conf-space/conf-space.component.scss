@@ -19,16 +19,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.app__StyledCalendarApp {
-  width: 50%;
-  height: 10%;
+  flex-direction: column;
 }
 
 .grid__StyledGridSpaces {
   width: 70%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .text__StyledText {
@@ -36,13 +35,6 @@
   color: var.$dark-blue;
   text-align: center;
   font-family: var.$font-sans;
-  padding-bottom: 30px;
-}
-
-.grid__StyledGridSpaces-2 {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
 
 p {
@@ -60,64 +52,15 @@ span {
   color: var.$green;
 }
 
-.grid__StyledGridSpaces-3 {
-  padding-top: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-
-}
-
-.espacio-3 {
-  display: flex;
-  flex-direction: column;
-  width: 150px;
-  height: 150px;
-  align-items: center;
-  justify-items: center;
-}
-
-.espacio {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-items: center;
-  text-align: center;
-}
-
-.espacio-4 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  width: 100%;
-  height: 100%;
-  gap: 15px;
-  align-items: center;
-  justify-items: center;
-}
-
-.fa-computer {
-  color: var.$green;
-  font-size: 30px;
-  cursor: pointer;
-}
-
 .fa-handshake {
   color: var.$green;
-  font-size: 70px;
+  font-size: clamp(8.5rem, 9.5rem, 9.5rem);
   cursor: pointer;
-}
-
-input:checked+label .fa-computer {
-  transition: .3s ease;
-  font-size: 40px;
-  color: var.$dark-blue;
 }
 
 input:checked+label .fa-handshake {
   transition: .3s;
-  font-size: 90px;
+  font-size: 130px;
   color: var.$dark-blue;
 }
 
@@ -126,84 +69,16 @@ input:checked+label .fa-handshake {
 }
 
 .separador-salareuniones {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  justify-items: center;
+  height: 70%;
 }
 
-.separador-sala-1 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 30px;
-  width: 150px;
-  height: 150px;
-  align-items: center;
-  justify-items: center;
-}
-
-.separador-sala-2 {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  gap: 30px;
-  width: 150px;
-  height: 150px;
-  align-items: center;
-  justify-items: center;
-}
-
-.espacio-central-1 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 30px;
-  width: 150px;
-  height: 150px;
-  align-items: center;
-  justify-items: center;
-}
-
-.espacio-central-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 30px;
-  width: 150px;
-  height: 150px;
-  align-items: center;
-  justify-items: center;
-}
-
-.espacio-central-3 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  width: 150px;
-  height: 150px;
-  align-items: center;
-  justify-items: center;
-}
-
-.interior-espacio-central-3 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  width: 150px;
-  height: 150px;
-  align-items: center;
-  justify-items: center;
-  gap: 30px;
-
-}
-
-.sala-de-reuniones {
-  width: 150px;
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+// .sala-de-reuniones {
+//   width: 150px;
+//   height: 150px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
 
 .right__StyledFormRightSection {
   width: 100%;
@@ -218,12 +93,6 @@ input:checked+label .fa-handshake {
   animation-fill-mode: both;
   animation-delay: .6s;
   transition: .3s;
-}
-
-.header-top {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .header-top>h2 {

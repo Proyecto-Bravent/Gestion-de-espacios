@@ -30,6 +30,7 @@ import { ReserveComponent } from './components/calendar/reserve/reserve.componen
 import { SpaceComponent } from './components/workspace/space/space.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { EditProfileComponent } from './components/profile/edit-profile/edit-profile.component';
+import { ConfSpaceComponent } from './components/workspace/conf-space/conf-space.component';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { EditProfileComponent } from './components/profile/edit-profile/edit-pro
     SpaceComponent,
     NotFoundComponent,
     EditProfileComponent,
+    ConfSpaceComponent,
   ],
   imports: [
     BrowserModule,
