@@ -25,8 +25,8 @@ export class CalendarComponent implements OnInit {
     this.reserveFiltered = [...this.reserve]
   }
 
-  async onDateSelected($reserve: any) {
-    this.reserveFiltered = await this.reservesService.filteredReserve($reserve)
+  async onDateSelected($event: any) {
+    this.reserveFiltered = await this.reservesService.filteredReserve($event)
   }
 
   async actReserves() {

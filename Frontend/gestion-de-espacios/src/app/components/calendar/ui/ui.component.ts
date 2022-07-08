@@ -12,9 +12,11 @@ export class UiComponent implements OnInit {
 
   @Input() reserves: Reserve[] = []
 
-  // Emitimos el evento de seleccion de fecha   
+  // Comunicamos el evento de seleccion de fecha   
 
   @Output() SelectedDate: EventEmitter<string>
+
+  // Creamos los días de la semana
 
   week: any = [
     "Monday",
@@ -26,6 +28,8 @@ export class UiComponent implements OnInit {
     "Sunday"
   ]
 
+  // Creamos las siguientes variables inicializadas a any para que se puedan usar en el html
+
   monthSelect: any[] = []
   dateSelect: any
   dateValue: any
@@ -34,16 +38,27 @@ export class UiComponent implements OnInit {
     this.SelectedDate = new EventEmitter()
   }
 
+  // Capturamos mes y año actuales
+
   ngOnChanges() {
-    this.getDaysFromDate(moment().format('MM'), moment().format('YYYY'))
+    // console.log(moment().format('MM'))
+    // console.log(moment().format('YYYY'))
   }
+
+  // Fecha de inicio
 
   ngOnInit(): void {
     this.getDaysFromDate(moment().format('MM'), moment().format('YYYY'))
 
   }
 
+  // Calendario
+
   getDaysFromDate(month: any, year: any) {
+
+    // Moment.js
+
+    // Guardamos el dia inicial y el día final para calcular el número de días del mes
 
     const startDate = moment.utc(`${year}/${month}/01`)
     const endDate = startDate.clone().endOf('month')
@@ -55,7 +70,11 @@ export class UiComponent implements OnInit {
     const numberDays = Math.round(diffDays)
 
     const arrayDays = Object.keys([...Array(numberDays)]).map((a: any) => {
+
       a = parseInt(a) + 1
+
+      // Date
+
       const dayObject = moment(`${year}-${month}-${a}`)
 
       const haveReserve = this.reserves.find(reserves => {
@@ -65,11 +84,17 @@ export class UiComponent implements OnInit {
       return {
         name: dayObject.format("dddd"),
         value: a,
+
+        // Día de la semana
+
         indexWeek: dayObject.isoWeekday()
       }
     })
     this.monthSelect = arrayDays
   }
+
+
+  // Cambiar el mes
 
   changeMonth(flag: any) {
     if (flag < 0) {

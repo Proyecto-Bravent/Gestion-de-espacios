@@ -19,15 +19,23 @@ export class ProfileComponent implements OnInit {
 
   constructor(private usersService: UsersService, private actRoute: ActivatedRoute, public router: Router) {
 
+    // Creamos la ruta que sirve para obtener la imagen de perfil del usuario
+
     this.imgPath = 'https://localhost:7023/api/Authenticate/'
   }
 
   ngOnInit(): void {
+
+    // Obtenemos el id del usuario que esta logueado 
+
     this.actRoute.params.subscribe(params => {
       this.id = parseInt(params['idprofile'])
       this.usersService.findOne(this.id).pipe(map((user: User) => this.user = user))
     })
   }
+
+  // Actualizar el usuario 
+
 
   updateUser() {
     this.actRoute.params.subscribe(async params => {

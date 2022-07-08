@@ -17,4 +17,6 @@ export class ReserveComponent implements OnInit {
   ngOnInit(): void {
   }
   // Aqui me tengo que traer los metodos de mis reservas, editar etc....
+
+
 }
