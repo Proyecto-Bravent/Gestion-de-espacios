@@ -45,8 +45,8 @@ export class SpaceComponent implements OnInit {
 
 
     // se submitea el formulario y se guarda en la base de datos y se redirige a la pagina de reservas realizadas. Reseteamos el formulario para que no se quede en el mismo estado que antes de hacer el submit 
-
-    this.formReserve.value.date = moment(this.formReserve.value.date).format('YYYY-MM-DD HH:mm')
+    this.formReserve.value.spaceId = parseInt(this.formReserve.value.spaceId)
+    this.formReserve.value.date = moment(this.formReserve.value.date).format('YYYY-MM-DD')
 
     this.reservesService.createReserve(this.formReserve.value).subscribe(async res => {
 
