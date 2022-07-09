@@ -11,6 +11,9 @@ import { SpaceComponent } from './components/workspace/space/space.component';
 import { WorkspaceComponent } from './components/workspace/workspace.component';
 import { LoginGuard } from './guards/login.guard';
 
+
+
+
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },

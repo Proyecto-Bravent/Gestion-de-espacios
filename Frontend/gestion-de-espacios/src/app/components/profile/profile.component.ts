@@ -34,6 +34,8 @@ export class ProfileComponent implements OnInit {
     })
   }
 
+
+
   // Actualizar el usuario 
 
 

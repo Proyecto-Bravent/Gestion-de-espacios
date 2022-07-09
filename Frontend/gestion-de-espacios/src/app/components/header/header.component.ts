@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class HeaderComponent {
   username: string | any
   logged: any
 
-  constructor(private usersServices: UsersService) {
+  constructor(private usersServices: UsersService, private router: Router) {
 
   }
 
@@ -20,6 +21,16 @@ export class HeaderComponent {
     this.logged = await this.usersServices.myUser()
     this.username = this.logged.username
   }
+
+  async OnSubmit() {
+    try {
+      const response = await this.usersServices.myUser()
+      this.router.navigate(['/profile', response.id])
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
 
   ngDoCheck(): void {
     this.isLogged = (localStorage.getItem('token') !== null) ? true : false

@@ -32,6 +32,12 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { EditProfileComponent } from './components/profile/edit-profile/edit-profile.component';
 import { ConfSpaceComponent } from './components/workspace/conf-space/conf-space.component';
 
+// Pipes
+
+import { FilterDocumentsPipe } from './pipes/filter-documents.pipe';
+import { SafePipe } from './pipes/safePipe.pipe';
+
+
 
 @NgModule({
   declarations: [
@@ -51,6 +57,10 @@ import { ConfSpaceComponent } from './components/workspace/conf-space/conf-space
     NotFoundComponent,
     EditProfileComponent,
     ConfSpaceComponent,
+    FilterDocumentsPipe,
+    SafePipe,
+
+
   ],
   imports: [
     BrowserModule,

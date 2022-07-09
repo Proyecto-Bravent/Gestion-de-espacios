@@ -94,8 +94,8 @@
 
                   <div *ngIf="isLogged" class="logged">
                     <li class="item__StyledMenuItem">
-                      <a class="link__StyledMenuLink" routerLink='/profile' routerLinkActive="active"
-                        title="Accede a tu perfil">MI PERFIL</a>
+                      <input title="Mi perfil" class="link__StyledMenuLink" type="submit" value="MI PERFIL"
+                        (click)="OnSubmit()">
                     </li>
                   </div>
                   <li class="item__StyledMenuItem">
