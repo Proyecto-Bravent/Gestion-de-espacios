@@ -43,7 +43,7 @@ export class ReservesService {
   updateReserve(pForm: any, pId: number): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Authorization': localStorage.getItem('token')!
+        "Authorization": `Bearer ${localStorage.getItem('token')!}`,
       })
     }
     const res = this.httpClient.put<any>(`${this.baseUrl}${pId}`, pForm, httpOptions)
@@ -55,7 +55,7 @@ export class ReservesService {
   deleteReserve(pId: number): Promise<any> {
     const httpOtions = {
       headers: new HttpHeaders({
-        'Authorization': localStorage.getItem('token')!
+        "Authorization": `Bearer ${localStorage.getItem('token')!}`,
       })
     }
     return lastValueFrom(this.httpClient.delete<any>(`${this.baseUrl}${pId}`, httpOtions))

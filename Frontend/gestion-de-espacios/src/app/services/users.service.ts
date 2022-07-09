@@ -23,7 +23,7 @@ export class UsersService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': localStorage.getItem('token')!
+        "Authorization": `Bearer ${localStorage.getItem('token')!}`,
       })
     }
     const res = this.httpClient.post<any>(this.baseUrl + 'login', pForm, httpOptions)
@@ -42,7 +42,7 @@ export class UsersService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': localStorage.getItem('token')!
+        "Authorization": `Bearer ${localStorage.getItem('token')!}`,
       })
     }
     return lastValueFrom(this.httpClient.get<any>(this.baseUrl + 'myprofile', httpOptions))
@@ -73,7 +73,8 @@ export class UsersService {
   resetPassword(pForm: any, pId: number): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Authorization': localStorage.getItem('token')!
+        'Content-Type': 'application/json',
+        "Authorization": `Bearer ${localStorage.getItem('token')!}`,
       })
     }
     const res = this.httpClient.put<any>(this.baseUrl + 'resetPassword/' + pId, pForm, httpOptions)
@@ -85,7 +86,8 @@ export class UsersService {
   editUser(pForm: FormData, pId: number): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Authorization': localStorage.getItem('token')!
+        'Content-Type': 'application/json',
+        "Authorization": `Bearer ${localStorage.getItem('token')!}`,
       })
     }
     return lastValueFrom(this.httpClient.put<any>(this.baseUrl + 'profile/update', pForm, httpOptions))
@@ -96,7 +98,7 @@ export class UsersService {
   deleteUser(pId: number): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Authorization': localStorage.getItem('token')!
+        "Authorization": `Bearer ${localStorage.getItem('token')!}`,
       })
     }
     const res = this.httpClient.delete<any>(this.baseUrl + 'profile/' + pId, httpOptions)
