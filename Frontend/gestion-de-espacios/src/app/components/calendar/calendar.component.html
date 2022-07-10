@@ -12,8 +12,12 @@
 
                 <div class="courses-container">
                   <div class="course">
-                    <article *ngFor="let reserve of reserves">
+                    <article *ngFor="let reserve of reserveFiltered">
                       <app-reserve [myReserve]="reserve" (refreshReserves)="actReserves()"></app-reserve>
+                    </article>
+                    <article *ngFor="let reserve of meetingFiltered">
+                      <app-reserveConference [myMeeting]="reserve" (refreshReserves)="actMeetings()">
+                      </app-reserveConference>
                     </article>
                   </div>
                 </div>
@@ -28,7 +32,7 @@
             </div>
             <div class="cards__StyledReservesCards">
               <div class="app__StyledReserveApp">
-                <app-ui [reserves]="reserveFiltered" (SelectedDate)="onDateSelected(reserves)"></app-ui>
+                <app-ui [reserves]="reserveFiltered" (SelectedDate)="onDateSelected($event)"></app-ui>
                 <p></p>
               </div>
             </div>

@@ -2,34 +2,31 @@
   <div class="courses-container">
     <div class="course">
       <div class="course-preview">
-        <h6>Reserva</h6>
+        <h6>Reserva </h6>
         <h6>
           <!-- {{ miReserve.id }} -->
         </h6>
         <h2>
-          {{ myReserve.user.name }}
+          {{ myMeeting.user.name }}
         </h2>
         <h2>
-          {{ myReserve.user.surname }}
+          {{ myMeeting.user.surname }}
         </h2>
       </div>
       <div class="course-info">
         <div class="progress-container">
         </div>
         <h3><span>Fecha:</span>
-          {{ myReserve.date | date: 'dd-MM-yyyy'}}
+          {{ myMeeting.startHour | date: 'dd/MM HH:mm' }} hasta {{ myMeeting.endHour | date: 'HH:mm' }}
         </h3>
         <h3><span>Sala:</span>
-          Reservado el {{ myReserve.workSpace.name }}
+          Sala de reuniones
         </h3>
         <h3><span>Compañia:</span>
-          {{ myReserve.user.company }}
+          {{ myMeeting.user.company }}
         </h3>
-        <!-- <h3><span>Notas:</span>
-        {{ miReserve.description }}
-      </h3> -->
       </div>
-      <a title="Borrar usuario" class="delete" (click)="onDelete(myReserve?.id)"><i
+      <a title="Borrar usuario" class="delete" (click)="onDelete(myMeeting?.id)"><i
           class="fa-solid fa-trash-can"></i></a>
     </div>
   </div>

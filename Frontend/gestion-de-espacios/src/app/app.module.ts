@@ -1,5 +1,3 @@
-// Modules
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -8,7 +6,7 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-
+import { JwtModule } from "@auth0/angular-jwt";
 // Directives
 
 import { AdminDirective } from './directives/admin.directive';
@@ -31,11 +29,7 @@ import { SpaceComponent } from './components/workspace/space/space.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { EditProfileComponent } from './components/profile/edit-profile/edit-profile.component';
 import { ConfSpaceComponent } from './components/workspace/conf-space/conf-space.component';
-
-// Pipes
-
-import { FilterDocumentsPipe } from './pipes/filter-documents.pipe';
-import { SafePipe } from './pipes/safePipe.pipe';
+import { ReserveConferenceComponent } from './components/calendar/reserve-conference/reserve-conference.component';
 
 
 
@@ -57,12 +51,11 @@ import { SafePipe } from './pipes/safePipe.pipe';
     NotFoundComponent,
     EditProfileComponent,
     ConfSpaceComponent,
-    FilterDocumentsPipe,
-    SafePipe,
-
+    ReserveConferenceComponent,
 
   ],
   imports: [
+
     BrowserModule,
     AppRoutingModule,
     FormsModule,
