@@ -149,6 +149,10 @@
   height: 100%;
 }
 
+.remove-item {
+  visibility: hidden;
+}
+
 a {
   text-decoration: none;
 }
@@ -167,9 +171,18 @@ a {
   height: 50px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .logo__StyledLogo {
     visibility: hidden;
+  }
+
+  .remove-item {
+    visibility: visible;
+  }
+
+
+  .main__StyledMainNav {
+    justify-content: center;
   }
 
   .container__StyledContainer {

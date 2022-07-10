@@ -61,10 +61,9 @@ span {
 }
 
 .grid__StyledGridSpaces-3 {
-  padding-top: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
 
 }
 
@@ -194,7 +193,6 @@ input:checked+label .fa-handshake {
   align-items: center;
   justify-items: center;
   gap: 30px;
-
 }
 
 .sala-de-reuniones {
@@ -304,7 +302,10 @@ input:checked+label .fa-handshake {
   text-align: center;
   font-family: var.$font-sans;
   font-size: var.$fz-xs;
+}
 
+.remove__StyledRemoveItem {
+  visibility: hidden;
 }
 
 option {
@@ -343,7 +344,6 @@ option {
 
 input {
   background-color: transparent;
-  ;
 }
 
 button {
@@ -353,7 +353,6 @@ button {
 
   &:focus {
     background-color: rgba(0, 0, 0, 0.09);
-
   }
 }
 
@@ -363,7 +362,6 @@ button {
   animation-fill-mode: both;
   animation-delay: 1s;
 }
-
 
 .a1 {
   animation-delay: 1s;
@@ -409,5 +407,93 @@ button {
     opacity: 1;
     // padding: 20px 40px;
     width: 0px;
+  }
+}
+
+@media screen and (max-width: 1370px) {
+  .container__StyledMainContainer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .left__StyledSpacesLeftSection {
+    margin-bottom: 30px;
+  }
+
+  .separador-salareuniones {
+    justify-content: center;
+    padding-right: 30px;
+  }
+
+  .grid__StyledGridSpaces-2 {
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .grid__StyledGridSpaces-3 {
+    justify-content: start;
+
+  }
+
+  .grid__StyledGridSpaces {
+    width: 50%;
+  }
+}
+
+
+@media screen and (max-width: 810px) {
+  .remove__StyledRemoveItem {
+    visibility: visible;
+  }
+
+  .grid__StyledGridSpaces-3 {
+    padding-left: 50px;
+
+  }
+
+  .removed-item {
+    display: none;
+  }
+
+  .left_styled {
+    padding-left: 20px;
+  }
+
+  .right_styled {
+    padding-right: 40px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .fa-computer {
+    font-size: var.$fz-xxl;
+  }
+
+  .grid__StyledGridSpaces {
+    width: 100%;
+  }
+
+  .left__StyledSpacesLeftSection {
+    margin-left: 0px;
+  }
+
+  .separador-salareuniones {
+    justify-content: center;
+  }
+
+  .grid__StyledGridSpaces-2 {
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .space {
+    margin-left: 50px;
+  }
+
+  .grid__StyledGridSpaces-3 {
+    padding-left: 30px;
+
   }
 }
