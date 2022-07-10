@@ -35,13 +35,10 @@
               </h4>
             </div>
             <div class="form">
-              <select name="daySelect" class="form-field animation a3" formControlName="date">
-                <option value="" selected disabled>Quiero reservar para dentro de:</option>
-                <option value="2">24 horas</option>
-                <option *ngIf="user.company.value === 'bravent/marketing || 'bitwork" value="3">48 horas</option>
-              </select>
-              <input type="time" name="daySelect" class="form-field animation a3" formControlName="dateInit">
-              <input type="time" name="daySelect" class="form-field animation a3" formControlName="dateEnded">
+
+              <input type="datetime-local" name="daySelect" class="form-field animation a3" formControlName="startHour">
+              <input type="datetime-local" name="daySelect" class="form-field animation a3" formControlName="endHour">
+
               <!-- <input type="date" name="daySelect" class="form-field animation a3" formControlName="date"> -->
 
               <input maxlength="150" type="text" class="form-field animation a3"

@@ -21,9 +21,6 @@ export class SpaceComponent implements OnInit {
 
     this.formReserve = new FormGroup({
 
-      email: new FormControl('',
-        [Validators.required
-        ]),
       spaceId: new FormControl('', [
         Validators.required, Validators.requiredTrue
       ]),
@@ -41,8 +38,7 @@ export class SpaceComponent implements OnInit {
     // this.reserveFiltered = [...this.reserve]
   }
 
-  onSubmit() {
-
+  async onSubmit() {
 
     // se submitea el formulario y se guarda en la base de datos y se redirige a la pagina de reservas realizadas. Reseteamos el formulario para que no se quede en el mismo estado que antes de hacer el submit 
     this.formReserve.value.spaceId = parseInt(this.formReserve.value.spaceId)
@@ -50,22 +46,15 @@ export class SpaceComponent implements OnInit {
 
     this.reservesService.createReserve(this.formReserve.value).subscribe(async res => {
 
-      if (res.id_reserve) {
-        alert('Reserva creada')
+      if (res.id) {
         this.formReserve.reset()
-        this.reserveFiltered = await this.reservesService.getAllReserves()
+        this.reserve = await this.reservesService.getAllReserves()
         this.router.navigate(['/calendar'])
-        console.log(res)
+
       } else {
         alert('Error al crear la reserva')
       }
+      console.log(this.reserve)
     })
   }
-
-  // Al espacio seleccionado, se filtran las reservas
-
-  async onSpaceSelected($event: any) {
-    this.reserveFiltered = await this.reservesService.getReservesByStatus($event)
-  }
-
 }

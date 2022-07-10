@@ -30,7 +30,8 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (localStorage.getItem('user-token') !== null) {
+
+    if (localStorage.getItem('token') !== null) {
       this.router.navigate(['/login'])
     }
   }
@@ -46,4 +47,3 @@ export class LoginComponent implements OnInit {
     })
   }
 }
-

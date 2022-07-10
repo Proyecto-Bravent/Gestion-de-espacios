@@ -11,7 +11,7 @@ import { ReservesService } from 'src/app/services/reserves.service'
 })
 export class CalendarComponent implements OnInit {
 
-  reserve: Reserve[] = []
+  reserves: Reserve[] = []
   reserveFiltered: Reserve[] = []
 
   constructor(
@@ -21,8 +21,9 @@ export class CalendarComponent implements OnInit {
 
 
   async ngOnInit(): Promise<void> {
-    this.reserve = await this.reservesService.getAllReserves()
-    this.reserveFiltered = [...this.reserve]
+    this.reserves = await this.reservesService.getAllReserves()
+    this.reserveFiltered = [...this.reserves]
+    console.log(this.reserves)
   }
 
   async onDateSelected($event: any) {

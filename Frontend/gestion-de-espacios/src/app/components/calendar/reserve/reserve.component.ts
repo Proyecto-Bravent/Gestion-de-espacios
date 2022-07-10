@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Reserve } from 'src/app/interfaces/reserve';
-import { User } from 'src/app/interfaces/user';
+import { ReservesService } from 'src/app/services/reserves.service';
 
 @Component({
   selector: 'app-reserve',
@@ -9,10 +10,10 @@ import { User } from 'src/app/interfaces/user';
 })
 export class ReserveComponent implements OnInit {
 
-  @Input() reserve: Reserve | any
-  @Input() user: User | any
+  @Input() myReserve: Reserve | any
+  reserved: Reserve[] | any
 
-  constructor() { }
+  constructor(private reservesService: ReservesService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
   }

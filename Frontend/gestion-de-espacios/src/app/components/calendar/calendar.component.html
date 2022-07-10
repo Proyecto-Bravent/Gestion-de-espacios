@@ -1,5 +1,4 @@
 
-
   <div class="main__StyledMainCalendar">
     <div class="form__StyledLeftForm">
       <div class="container__StyledProfileAndReservesMainContainer">
@@ -13,8 +12,8 @@
 
                 <div class="courses-container">
                   <div class="course">
-                    <article *ngFor="let reserve of reserveFiltered">
-                      <app-reserve [reserve] (refreshReserves)="actReserves()"></app-reserve>
+                    <article *ngFor="let reserve of reserves">
+                      <app-reserve [myReserve]="reserve" (refreshReserves)="actReserves()"></app-reserve>
                     </article>
                   </div>
                 </div>
@@ -29,7 +28,7 @@
             </div>
             <div class="cards__StyledReservesCards">
               <div class="app__StyledReserveApp">
-                <app-ui [reserves]="reserveFiltered" (SelectedDate)="onDateSelected(reserve)"></app-ui>
+                <app-ui [reserves]="reserveFiltered" (SelectedDate)="onDateSelected(reserves)"></app-ui>
                 <p></p>
               </div>
             </div>

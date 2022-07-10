@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CalendarComponent } from './components/calendar/calendar.component';
+import { ReserveComponent } from './components/calendar/reserve/reserve.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
@@ -11,17 +12,15 @@ import { SpaceComponent } from './components/workspace/space/space.component';
 import { WorkspaceComponent } from './components/workspace/workspace.component';
 import { LoginGuard } from './guards/login.guard';
 
-
-
-
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'workspace', component: WorkspaceComponent },
-  { path: 'profile/:idprofile', component: ProfileComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: 'calendar', component: CalendarComponent },
+  { path: 'reserve', component: ReserveComponent },
   { path: 'space', component: SpaceComponent },
   { path: 'conference', component: ConfSpaceComponent },
   { path: "**", component: NotFoundComponent },
