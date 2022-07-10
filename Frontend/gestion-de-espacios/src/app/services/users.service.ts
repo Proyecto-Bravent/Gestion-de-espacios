@@ -1,6 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { user } from '@angular/fire/auth';
 import { lastValueFrom, map, Observable } from 'rxjs';
 import { User } from '../interfaces/user';
 
@@ -15,18 +14,13 @@ export class UsersService {
   constructor(private httpClient: HttpClient) {
 
     this.baseUrl = 'https://localhost:7056/api/Authenticate/'
-  }
 
+  }
   // Loggin del usuario
 
   login(pForm: any): Observable<any> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        "Authorization": `Bearer ${localStorage.getItem('token')!}`,
-      })
-    }
-    const res = this.httpClient.post<any>(this.baseUrl + 'login', pForm, httpOptions)
+
+    const res = this.httpClient.post<any>(this.baseUrl + 'login', pForm)
     return res
   }
 
@@ -41,40 +35,29 @@ export class UsersService {
   myUser() {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json',
         "Authorization": `Bearer ${localStorage.getItem('token')!}`,
       })
     }
-    return lastValueFrom(this.httpClient.get<any>(this.baseUrl + 'myprofile', httpOptions))
+    return lastValueFrom(this.httpClient.get<any>(this.baseUrl, httpOptions))
   }
 
   // Traigo usuarios por Id
 
-  getById(pId: number): Promise<any> {
-    return lastValueFrom(this.httpClient.get<any>(this.baseUrl + "profile/" + pId))
+  getById(pId: string): Promise<User> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Authorization": `Bearer ${localStorage.getItem('token')!}`,
+      })
+    }
+    return lastValueFrom(this.httpClient.get<User>(this.baseUrl + pId, httpOptions))
   }
 
-  // Encontrar usuarios por id 
-
-  findOne(id: number): Observable<User> {
-    return this.httpClient.get<User>(this.baseUrl + 'profile/' + id).pipe(
-      map((user: User) => user)
-    )
-  }
-
-  // Traigo todos los usuarios
-
-  getAll(): Promise<any[]> {
-    return lastValueFrom(this.httpClient.get<any[]>(this.baseUrl + '/profiles'))
-  }
-
-  // Resetear contraseña solo autorizados
+  // Reset-password
 
   resetPassword(pForm: any, pId: number): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        "Authorization": `Bearer ${localStorage.getItem('token')!}`,
+        'Authorization': localStorage.getItem('token')!
       })
     }
     const res = this.httpClient.put<any>(this.baseUrl + 'resetPassword/' + pId, pForm, httpOptions)
@@ -86,8 +69,7 @@ export class UsersService {
   editUser(pForm: FormData, pId: number): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        "Authorization": `Bearer ${localStorage.getItem('token')!}`,
+        'Authorization': localStorage.getItem('token')!
       })
     }
     return lastValueFrom(this.httpClient.put<any>(this.baseUrl + 'profile/update', pForm, httpOptions))
@@ -98,16 +80,10 @@ export class UsersService {
   deleteUser(pId: number): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
-        "Authorization": `Bearer ${localStorage.getItem('token')!}`,
+        'Authorization': localStorage.getItem('token')!
       })
     }
     const res = this.httpClient.delete<any>(this.baseUrl + 'profile/' + pId, httpOptions)
     return res
   }
 }
-
-
-
-
-
-
