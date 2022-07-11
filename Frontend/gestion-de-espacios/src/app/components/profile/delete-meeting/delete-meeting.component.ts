@@ -4,14 +4,16 @@ import { Meeting } from 'src/app/interfaces/meeting';
 import { ReservesService } from 'src/app/services/reserves.service';
 
 @Component({
-  selector: 'app-reserveConference',
-  templateUrl: './reserve-conference.component.html',
-  styleUrls: ['./reserve-conference.component.scss']
+  selector: 'app-delete-meeting',
+  templateUrl: './delete-meeting.component.html',
+  styleUrls: ['./delete-meeting.component.scss']
 })
-
-export class ReserveConferenceComponent implements OnInit {
+export class DeleteMeetingComponent implements OnInit {
 
   @Input() myMeeting: Meeting | any
+
+
+
   meetings: Meeting[] | any
   meetingFiltered: Meeting[] = []
 

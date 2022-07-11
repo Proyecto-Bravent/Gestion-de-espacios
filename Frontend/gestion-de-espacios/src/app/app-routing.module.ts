@@ -17,12 +17,12 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'workspace', component: WorkspaceComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'calendar', component: CalendarComponent },
-  { path: 'reserve', component: ReserveComponent },
-  { path: 'space', component: SpaceComponent },
-  { path: 'conference', component: ConfSpaceComponent },
+  { path: 'workspace', canActivate: [LoginGuard], component: WorkspaceComponent },
+  { path: 'profile', canActivate: [LoginGuard], component: ProfileComponent },
+  { path: 'calendar', canActivate: [LoginGuard], component: CalendarComponent },
+  { path: 'reserve', canActivate: [LoginGuard], component: ReserveComponent },
+  { path: 'space', canActivate: [LoginGuard], component: SpaceComponent },
+  { path: 'conference', canActivate: [LoginGuard], component: ConfSpaceComponent },
   { path: "**", component: NotFoundComponent },
 
 ];

@@ -44,7 +44,6 @@ export class PasswordComponent implements OnInit {
     }
   }
 
-
   // Required validator for password field in the form group editPassword
 
   checkControl(controlName: string, errorName: string) {

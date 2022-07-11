@@ -19,8 +19,7 @@
                 <div class="course-info">
                   <div class="progress-container">
                   </div>
-                  <h2><span>Nombre:</span><br>
-                    {{ user.name }} {{ user.surname }}</h2>
+                  <h2><span>Nombre:</span> {{ user.name }} {{ user.surname }}</h2>
                   <h2><span>Email:</span> {{ user.email }}</h2>
                   <h2><span>Username:</span> {{ user.userName }}</h2>
 
@@ -56,10 +55,10 @@
           <div class="app__StyledReserveApp">
             <div class="courses-container-back">
               <article *ngFor="let reserve of reserveFiltered">
-                <app-reserve [myReserve]="reserve"></app-reserve>
+                <app-delete-reserve [myReserve]="reserve"></app-delete-reserve>
               </article>
               <article *ngFor="let reserve of meetingFiltered">
-                <app-reserveConference [myMeeting]="reserve"></app-reserveConference>
+                <app-delete-meeting [myMeeting]="reserve"></app-delete-meeting>
               </article>
             </div>
             <p></p>

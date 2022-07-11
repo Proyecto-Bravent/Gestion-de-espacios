@@ -1,3 +1,5 @@
+// Modules
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -29,8 +31,9 @@ import { SpaceComponent } from './components/workspace/space/space.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { EditProfileComponent } from './components/profile/edit-profile/edit-profile.component';
 import { ConfSpaceComponent } from './components/workspace/conf-space/conf-space.component';
+import { DeleteReserveComponent } from './components/profile/delete-reserve/delete-reserve.component';
+import { DeleteMeetingComponent } from './components/profile/delete-meeting/delete-meeting.component';
 import { ReserveConferenceComponent } from './components/calendar/reserve-conference/reserve-conference.component';
-
 
 
 @NgModule({
@@ -51,7 +54,9 @@ import { ReserveConferenceComponent } from './components/calendar/reserve-confer
     NotFoundComponent,
     EditProfileComponent,
     ConfSpaceComponent,
-    ReserveConferenceComponent,
+    DeleteReserveComponent,
+    DeleteMeetingComponent,
+    ReserveConferenceComponent
 
   ],
   imports: [

@@ -1,15 +1,14 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core'
-import { Router } from '@angular/router'
+import { Component, OnInit } from '@angular/core'
 import { Meeting } from 'src/app/interfaces/meeting'
 import { Reserve } from 'src/app/interfaces/reserve'
 import { ReservesService } from 'src/app/services/reserves.service'
-
 
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss']
 })
+
 export class CalendarComponent implements OnInit {
 
   reserves: Reserve[] = []
@@ -17,19 +16,13 @@ export class CalendarComponent implements OnInit {
   meetings: Meeting[] = []
   meetingFiltered: Meeting[] = []
 
-  constructor(
-    private reservesService: ReservesService,
-    private router: Router,) { }
-
-
+  constructor(private reservesService: ReservesService) { }
 
   async ngOnInit(): Promise<void> {
     this.reserves = await this.reservesService.getAllReserves()
     this.reserveFiltered = [...this.reserves]
     this.meetings = await this.reservesService.getAllMeetings()
     this.meetingFiltered = [...this.meetings]
-
-
   }
 
   async onDateSelected($event: any) {
@@ -46,5 +39,4 @@ export class CalendarComponent implements OnInit {
   async actMeetings() {
     this.meetingFiltered = await this.reservesService.getAllMeetings()
   }
-
 }

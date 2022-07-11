@@ -1,7 +1,5 @@
 @use 'var.scss';
 
-
-
 .wrapper-calendar {
   display: flex;
   flex-direction: column;
@@ -53,12 +51,6 @@ span {
   grid-column-start: var(--first-day-start, 0);
 }
 
-// .calendar_day span {}
-
-// .calendar_day span:hover {}
-
-// .calendar_day span:before {}
-
 .day-name {
   font-size: 12px;
   margin-bottom: 2px;
@@ -72,7 +64,6 @@ span {
   justify-content: space-around;
   align-items: center;
   align-content: center;
-
 
   button {
     cursor: pointer;
