@@ -22,10 +22,4 @@ export class ReserveConferenceComponent implements OnInit {
     this.meetings = await this.reservesService.getAllMeetings()
     this.meetingFiltered = [...this.meetings]
   }
-
-  async onDelete(pId: number) {
-
-    this.meetingFiltered = await this.reservesService.deleteMeeting(pId);
-    this.router.navigate(['/calendar']);
-  }
 }
