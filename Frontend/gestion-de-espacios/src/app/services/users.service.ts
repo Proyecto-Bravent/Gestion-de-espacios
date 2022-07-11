@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { lastValueFrom, map, Observable } from 'rxjs';
 import { User } from '../interfaces/user';
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,11 +13,13 @@ export class UsersService {
   user: User | any
   baseUrl: string
 
+
   constructor(private httpClient: HttpClient) {
 
     this.baseUrl = 'https://localhost:7056/api/Authenticate/'
 
   }
+
   // Loggin del usuario
 
   login(pForm: any): Observable<any> {
@@ -50,9 +54,18 @@ export class UsersService {
       })
     }
     return lastValueFrom(this.httpClient.get<User>(this.baseUrl + pId, httpOptions))
+
   }
 
-  // Reset-password
+
+
+  // Encontrar usuarios por id 
+
+
+  // Traigo todos los usuarios
+
+
+  // Resetear contraseña solo autorizados
 
   resetPassword(pForm: any, pId: number): Observable<any> {
     const httpOptions = {
@@ -66,13 +79,15 @@ export class UsersService {
 
   // Editar usuario solo los autorizados
 
-  editUser(pForm: FormData, pId: number): Promise<any> {
+  editUser(pForm: FormData, pId: string): Promise<any> {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Authorization': localStorage.getItem('token')!
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${localStorage.getItem('token')!}`,
       })
     }
-    return lastValueFrom(this.httpClient.put<any>(this.baseUrl + 'profile/update', pForm, httpOptions))
+    console.log(pId)
+    return lastValueFrom(this.httpClient.put<any>(this.baseUrl + 'Edit/' + pId, pForm, httpOptions))
   }
 
   // Borrar usuario solo los autorizados
@@ -87,3 +102,5 @@ export class UsersService {
     return res
   }
 }
+
+
