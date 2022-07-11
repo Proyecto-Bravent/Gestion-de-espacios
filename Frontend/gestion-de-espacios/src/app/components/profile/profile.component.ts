@@ -24,7 +24,6 @@ export class ProfileComponent implements OnInit {
   meetings: Meeting[] = []
   meetingFiltered: Meeting[] = []
 
-
   constructor(private usersService: UsersService, private actRoute: ActivatedRoute, public router: Router, private reserveService: ReservesService) {
 
     // Creamos la ruta que sirve para obtener la imagen de perfil del usuario
@@ -48,22 +47,4 @@ export class ProfileComponent implements OnInit {
     this.meetingFiltered = this.meetingFiltered.filter(x => x.userId === payload.Id)
 
   }
-
-
-
-  // Actualizar el usuario 
-
-
-  // updateUser() {
-  //   this.actRoute.params.subscribe(async params => {
-  //     let userId = parseInt(params['idprofile'])
-  //     if (params['idprofile']) {
-  //       this.user = await this.usersService.getById(userId)
-  //     } else {
-  //       this.user = await this.usersService.myUser()
-  //     }
-  //   })
-  // }
-
-
 }
