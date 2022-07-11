@@ -8,11 +8,11 @@ import { ReservesService } from 'src/app/services/reserves.service';
   templateUrl: './delete-reserve.component.html',
   styleUrls: ['./delete-reserve.component.scss']
 })
+
 export class DeleteReserveComponent implements OnInit {
 
 
   @Input() myReserve: Reserve | any
-
   reserved: Reserve[] | any
   reserveFiltered: Reserve[] = []
 

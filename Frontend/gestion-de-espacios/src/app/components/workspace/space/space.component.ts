@@ -34,12 +34,10 @@ export class SpaceComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
-    // this.reserve = await this.reservesService.getReservesByStatus(true)
-    // this.reserveFiltered = [...this.reserve]
+
   }
 
   async onSubmit() {
-
     // se submitea el formulario y se guarda en la base de datos y se redirige a la pagina de reservas realizadas. Reseteamos el formulario para que no se quede en el mismo estado que antes de hacer el submit 
     this.formReserve.value.spaceId = parseInt(this.formReserve.value.spaceId)
     this.formReserve.value.date = moment(this.formReserve.value.date).format('YYYY-MM-DD')

@@ -8,6 +8,7 @@ import { UsersService } from 'src/app/services/users.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
+
 export class HeaderComponent {
 
   isLogged: boolean = false

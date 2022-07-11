@@ -9,6 +9,7 @@ import { UsersService } from 'src/app/services/users.service';
   templateUrl: './password.component.html',
   styleUrls: ['./password.component.scss']
 })
+
 export class PasswordComponent implements OnInit {
 
   editPassword: FormGroup;
@@ -43,9 +44,7 @@ export class PasswordComponent implements OnInit {
       return { samePass: true }
     }
   }
-
   // Required validator for password field in the form group editPassword
-
   checkControl(controlName: string, errorName: string) {
 
     if (this.editPassword.get(controlName)?.hasError(errorName) && this.editPassword.get(controlName)?.touched) {
@@ -54,9 +53,7 @@ export class PasswordComponent implements OnInit {
       return false
     }
   }
-
   // touched reset pass word field in the form group editPassword when user click on it
-
   touchedReset(resetPass: string) {
 
     if (this.editPassword.get(resetPass)?.touched) {
@@ -65,9 +62,7 @@ export class PasswordComponent implements OnInit {
       return false
     }
   }
-
   // Edit password of the user logged in the system 
-
   editMyPass() {
     this.activateRoute.params.subscribe(params => {
 

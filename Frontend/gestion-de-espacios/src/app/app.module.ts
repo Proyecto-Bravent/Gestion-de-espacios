@@ -8,7 +8,6 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { JwtModule } from "@auth0/angular-jwt";
 // Directives
 
 import { AdminDirective } from './directives/admin.directive';
