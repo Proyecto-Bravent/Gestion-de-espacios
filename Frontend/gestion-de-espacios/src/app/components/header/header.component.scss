@@ -70,11 +70,6 @@
   }
 }
 
-// .contact__StyledContactSupport {
-//   display: flex;
-//   justify-content: space-between;
-// }
-
 .support__StyledSocialLinks {
   display: flex;
   justify-content: center;
@@ -128,9 +123,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: var.$fz-xs;
+  font-size: var.$fz-xxs;
   font-family: var.$font-sans;
-  width: 110px;
+  width: 5rem;
   height: 80px;
   color: white;
   font-weight: 600;
@@ -188,4 +183,6 @@ a {
   .container__StyledContainer {
     padding-right: 90px;
   }
+
+  .item__StyledMenuItem a {}
 }
